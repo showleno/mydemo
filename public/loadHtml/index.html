@@ -1,0 +1,1121 @@
+<style>
+	.list_box {
+		position: relative;
+	}
+
+	.com_icon {
+		display: inline-block;
+		background: url("images/common.png") no-repeat;
+	}
+
+	.icon_1 {
+		background-position: 0 0;
+	}
+
+	.icon_2 {
+		background-position: -60px 0;
+	}
+
+	.icon_3 {
+		background-position: -120px 0;
+	}
+
+	.icon_4 {
+		background-position: -180px 0;
+	}
+
+	/* 主色 */
+
+	.main_color {
+		background-color: <%-commonjson.pageColor.mainColor %>;
+	}
+
+	/* 副色 */
+
+	.deputy_bg_color {
+		background-color: <%-commonjson.pageColor.deputyColor %>;
+	}
+
+	/* 导航颜色 */
+
+	.nav_bg_color {
+		background-color: <%-commonjson.pageColor.columnColor%>;
+	}
+
+	/* 导航文字颜色 */
+
+	.nav_text_color {
+		color: <%-commonjson.pageColor.textColor%>;
+	}
+
+	/* 导航文字滑过颜色 */
+
+	.nav_line ul li a:hover {}
+
+	/* 网页背景颜色 */
+
+	.frame {
+		background-color: <%-commonjson.pageColor.backgroundColor %>;
+	}
+</style>
+
+<div class="frame">
+	<div class="topLab" style="margin-bottom:0px">
+		<div class="wra_width980 hei40 edi showBut top_show topBack" style="width:<%-topjson.width%> ;height:<%-topjson.height %>px; 
+		<%if (topjson.bgcolor != undefined || topjson.bgcolor != '' ) { %>background-color:<%-topjson.bgcolor%>;<%}%>  
+		<%if (topjson.backgroundImages != undefined || topjson.backgroundImages != '' )  { %>
+			background-image: url(<%=topjson.backgroundImages%>); 
+			background-repeat: no-repeat; 
+		<% } %>
+		">
+			<div class="top_line">
+				<div class="my_admin">
+					<div class="user_name">
+						<span>
+							<i class="fa fa-user"></i>
+						</span>
+						<p class="top_font_color" style="color:<%-topjson.fontColor%>">admin</p>
+					</div>
+					<div class="personal_center">
+						<p  class="top_font_color" style="color:<%-topjson.fontColor%>">个人中心
+							<i class="fa fa-angle-down" style="color:<%-topjson.fontColor%>"></i>
+						</p>
+						<div class="down_con">
+							<ul>
+								<li>
+									<a href="">我的社团</a>
+								</li>
+								<li>
+									<a href="">我的帮帮忙</a>
+								</li>
+								<li>
+									<a href="">消息中心</a>
+								</li>
+								<li>
+									<a href="">我的文库</a>
+								</li>
+								<li>
+									<a href="">个人资料</a>
+								</li>
+								<li>
+									<a href="">我的问卷</a>
+								</li>
+								<li>
+									<a href="">我的资源</a>
+								</li>
+								<li>
+									<a href="">我的期刊</a>
+								</li>
+								<li>
+									<a href="">我的圈子</a>
+								</li>
+								<li>
+									<a href="">修改密码</a>
+								</li>
+								<li>
+									<a href="">我的活动</a>
+								</li>
+								<li>
+									<a href="">退出</a>
+								</li>
+							</ul>
+							<i></i>
+						</div>
+					</div>
+					<div class="admin_renovation">
+						<a href=""  class="top_font_color" style="color:<%-topjson.fontColor%>">管理社团</a>
+						<a href=""  class="top_font_color" style="color:<%-topjson.fontColor%>">网站装修</a>
+					</div>
+				</div>
+				<div class="top_search">
+					<form action="">
+						<input type="text" placeholder="输入关键词">
+						<a class="deputy_bg_color" style="background-color:<%-topjson.btnColor%>;color:#fff;">
+							<i class="fa fa-search"></i>
+						</a>
+					</form>
+				</div>
+				<div class="login">
+					<a class="deputy_bg_color top_btn_bg" style="background-color:<%-topjson.btnColor%>;color:#fff;">登录</a>
+					<a class="deputy_bg_color top_btn_bg" style="background-color:<%-topjson.btnColor%>;color:#fff;">注册</a>
+				</div>
+			</div>
+			<div class="but">
+				<a class="top_set pub_mask">顶部设置</a>
+			</div>
+		</div>
+	</div>
+	<div class="logo_line" style="margin-bottom:0px">
+		<div class="wra_width980 logoname showBut top_show" style="width:<%-bannerjson.width%> ;height:<%-bannerjson.height %>px; 
+			<% if (bannerjson.color != undefined && bannerjson.color != '') { %> 	background-color: <%-bannerjson.color%> <% } %>  
+			<% if (bannerjson.backgroundImages != undefined && bannerjson.backgroundImages != '' )  { %> background-image: url(<%-bannerjson.backgroundImages%>); background-repeat: no-repeat; <% } %>">
+			<div class="logo edi top_show" style="top:0;left:0;">
+				<img src="images/1.jpg" alt="">
+				<div class="set_hide">
+					<a class="logo_set_but pub_mask">设置</a>
+					<a class="hide">隐藏</a>
+				</div>
+			</div>
+			<div class="association_name edi top_show" style="top:21px;left:72px;">
+				<p style="<% if (titlejson.color != undefined ) { %>    color: <%-titlejson.color%> <% } else { %> color: #444 <% } %>; font-family: <%-titlejson.fontFamily %>; font-size: <%-titlejson.fontSize %>; ">
+					<%-titlejson.textarea %>
+				</p>
+				<div class="set_hide">
+					<a class="name_set_but pub_mask">设置</a>
+					<a class="hide">隐藏</a>
+				</div>
+			</div>
+			<div class="but">
+				<a class="set_rise pub_mask">设置抬头</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav_line nav_bg_color" style="background-color:#a66d52;">
+		<div class="nav_top wra_width980  hei40 showBut">
+			<ul id="sortable" class="navMove">
+				<li class="navList">
+					<a href="" class="nav_text_color" style="color:#fff;">首页</a>
+				</li>
+				<% for(var i = 0; i < navjson.nav_line.length-1; i++) {%>
+					<li class="navList <%-'navList_'+i%>" style="<%if( navjson.nav_line[i+1].show == false ) { %>display: none<% } %>">
+						<a href="" class="nav_text_color" style="color:#fff;">
+							<% if ( navjson.nav_line[i+1].alias == '' || navjson.nav_line[i+1].alias == undefined ) { %>
+								<%-navjson.nav_line[i+1].name%>
+									<% } else { %>
+										<%-navjson.nav_line[i+1].alias %>
+											<% } %>
+						</a>
+						<% if ( navjson.nav_line[i+1].childNav.length != 0 ) { %>
+							<ul class="childNav nav_bg_color">
+								<% for(var j = 0; j < navjson.nav_line[i+1].childNav.length; j++) {%>
+									<li>
+										<a href="" class="nav_text_color">
+											<%-navjson.nav_line[i+1].childNav[j].name %>
+										</a>
+									</li>
+									<% } %>
+							</ul>
+							<% } %>
+					</li>
+					<% } %>
+			</ul>
+			<div class="but nav_set_but">
+				<a>设置导航</a>
+			</div>
+			<div class="but nav_style_but">
+				<a>设置外观</a>
+			</div>
+		</div>
+	</div>
+	<div class="full top_show slideShow">
+		<div class="fullSlide L_1" style="width:<%-slidejson.width%>">
+			<div class="bd">
+				<ul>
+					<li _src="url(images/5.jpg)" style="background-color:#B8CED1">
+						<a href="#"></a>
+					</li>
+					<li _src="url(images/2.jpg)" style="background-color:#B8CED1">
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="hd">
+				<ul></ul>
+			</div>
+			<span class="prev"></span>
+			<span class="next"></span>
+		</div>
+		<div class="wra_width980 edi lbtbj showBut">
+			<div class="but">
+				<a class="slide_set pub_mask">设置效果</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="wra_width980 field_wra" type="field" >
+			<div class="field">
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_1 edi addMod" DR_drag="1" DR_replace="1" 
+						data-name="" 
+						data-line="line_1" 
+						data-type="none" 
+						data-columnId="" 
+						data-count="" 
+						data-activityType=""
+						data-wkType=""
+						data-postId=""
+						>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+					<!-- <div class="line_1 edi moveMod" DR_drag="1" DR_replace="1">
+					    <div class="list_box">
+					        <p class="list_hd bot_main_color">关于社团</p>
+					        <ul class="list_ul">
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">社团章程</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">社团简介</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">社团章程</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">社团简介</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+					                </span>
+					            </li>
+					            <li class="list_lst">
+					                <span class="_ct">
+					                    <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+					                </span>
+					            </li>
+					        </ul>
+					    </div>
+					    <div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+					    	<ol>
+					    		<li>
+					    			<a class="on">更名<i class="fa fa-angle-up"></i></a>
+					    			<p class="chenga_name_sel">
+					    				<span>关于社团</span>
+					    			</p>
+					    		</li>
+					    		<li><a class="modular_set pub_mask">设置</a></li>
+					    		<li><a class="clearMod">去除</a></li>
+					    		<li><a href="">加数据</a></li>
+					    	</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>  
+					</div> -->
+				</div>
+				<div class="wid480 column" data-wid="wid480">
+					<div class="line_1 edi moveMod" DR_drag="1" DR_replace="1" 
+						data-name="社团动态"
+						data-line="line_1" 
+						data-type="news"
+						data-columnId="1332" 
+						data-count="" 
+						data-activityType=""
+						data-wkType=""
+						data-postId=""
+						>
+						<div class="list_box">
+							<p class="list_hd bot_main_color">社团动态</p>
+							<ul class="list_ul">
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">九三学社江西省第八次代表大会胜利闭幕</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">关于开展第二批“九三楷模”评选表彰工作</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">关于做好2018年度《民主与科学》征订工作</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">上班族如何平衡工作与生活调查</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">王贤才被评为“九三楷模”</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">不忘合作初心　弘扬优良传统</a>
+									</span>
+								</li>
+								<li class="list_lst">
+									<span class="_ct">
+										<a href="javascript" class="_link">社省委在全社脱贫攻坚民主监督研讨会上</a>
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+							<ol>
+								<li>
+									<a class="on">更名
+										<i class="fa fa-angle-up"></i>
+									</a>
+									<p class="chenga_name_sel">
+										<span>社团动态</span>
+										<span>社团动态</span>
+										<span>社团动态</span>
+									</p>
+								</li>
+								<li>
+									<a class="modular_set pub_mask">设置</a>
+								</li>
+								<li>
+									<a class="chooseStyle">风格</a>
+								</li>
+								<li>
+									<a href="">加数据</a>
+								</li>
+							</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+					</div>
+				</div>
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_1 mod edi moveMod" DR_drag="1" DR_replace="1" 
+					data-name=""
+					data-line="line_1"
+					data-type="banner"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="fullSlide L_2">
+							<div class="bd">
+								<ul>
+									<li _src="url(images/6.jpg)" _title="九三学社中央学习实践活动总结表11">
+										<a href="#"></a>
+									</li>
+									<li _src="url(images/7.jpg)" _title="九三学社动员大会22">
+										<a href="#"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="hd">
+								<ul></ul>
+							</div>
+							<span class="prev"></span>
+							<span class="next"></span>
+							<div class="tit main_color" style="background-color:#af7b63;color:#fff;">九三学社动员大会</div>
+						</div>
+						<div class="mod_edi_but">
+							<ol>
+								<li>
+									<a class="modular_set pub_mask">设置</a>
+								</li>
+								<li>
+										<a class="chooseStyle">风格</a>
+								</li>
+								<li>
+									<a href="">加数据</a>
+								</li>
+							</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+					</div>
+				</div>
+				<!-- 域编辑 -->
+				<div class="edi_line">
+					<div class="layout_set">
+						<div class="layout">
+							<p class="new_layout">
+								<i class="fa fa-plus"></i>新增布局</p>
+							<p class="copy_layout">
+								<i class="fa fa-files-o"></i>复制布局</p>
+						</div>
+						<div class="up_down">
+							<p class="up">
+								<i class="fa fa-arrow-up"></i>
+							</p>
+							<p class="down">
+								<i class="fa fa-arrow-down"></i>
+							</p>
+						</div>
+					</div>
+					<div class="lay_hei">
+						<div class="hei_set">
+							<span>高度:</span>
+							<label>
+								<input type="radio" name="" checked value="默认">
+								<i></i>默认</label>
+							<label>
+								<input type="radio" name="" value="加高">
+								<i></i>加高</label>
+						</div>
+						<div class="lay_but">
+							<p class="changeLayout">换布局</p>
+							<p class="delMod">删除</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wra_width980 field_wra" type="field">
+			<div class="field">
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_1 edi addMod" DR_drag="1" DR_replace="1"
+					data-name=""
+					data-line="line_1"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+					<!-- <div class="line_1 mod edi moveMod" DR_drag="1" DR_replace="1">
+					    <div class="list_box">
+					        <ul class="hd_ul bot_main_color">
+					            <li class="hd_lst cur main_color">圈子</li>
+					            <li class="hd_lst">圈子分类</li>
+					        </ul>
+					        <div class="list_cont">
+					            <div class="cont_one">
+					                <ul class="list_ul img_ul_2">
+					                    <li class="list_lst">
+					                        <div class="_cont">
+					                            <img src="images/qz.jpg" class="_img_100"/>
+					                            <div class="_rt">
+					                                <p class="_dw">江西博德律师事务所</p>
+					                                <p class="_num">成员：<i class="">999</i>人</p>
+					                                <p class="_num">话题：<i class="">999</i></p>
+					                            </div>
+					                        </div>
+					                    </li>
+					                    <li class="list_lst">
+					                        <div class="_cont">
+					                            <img src="images/qz.jpg" class="_img_100"/>
+					                            <div class="_rt">
+					                                <p class="_dw">江西博德律师事务所</p>
+					                                <p class="_num">成员：<i class="">999</i>人</p>
+					                                <p class="_num">话题：<i class="">999</i></p>
+					                            </div>
+					                        </div>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="cont_one" style="display:none;">1</div>
+					        </div>         
+					    </div>
+					    <div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+					    	<ol>
+					    		<li>
+					    			<a class="on">更名<i class="fa fa-angle-up"></i></a>
+					    			<p class="chenga_name_sel">
+					    				<span>圈子</span>
+					    				<span>圈子分类</span>
+					    			</p>
+					    		</li>
+					    		<li><a class="modular_set pub_mask">设置</a></li>
+					    		<li><a class="clearMod">去除</a></li>
+					    		<li><a href="">加数据</a></li>
+					    	</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>  
+					</div> -->
+				</div>
+				<div class="wid480 column" data-wid="wid240">
+					<div class="line_1 edi addMod" DR_drag="1" DR_replace="1" 
+					data-name=""
+					data-line="line_1"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+					<!-- <div class="line_1 edi moveMod" DR_drag="1" DR_replace="1">
+					    <div class="list_box">
+					        <p class="list_hd bot_main_color">电子期刊</p>
+					        <ul class="list_ul img_ul_2">
+					            <li class="list_lst">
+					                <div class="_cont">
+					                    <span class="_img_100"><img src="images/70100.jpg" class="img_70"/></span>
+					                    <div class="_rt">
+					                        <p class="_dw">江西博德律师事务所</p>
+					                        <div class="_btn_box">
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml deputy_bg_color">阅读</a>
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml deputy_bg_color">下载</a>
+					                        </div>
+					                    </div>
+					                </div>
+					            </li>
+					            <li class="list_lst">
+					                <div class="_cont">
+					                    <span class="_img_100"><img src="images/70100.jpg" class="img_70"/></span>
+					                    <div class="_rt">
+					                        <p class="_dw">江西博德律师事务所江西博德律师事务所江西博德律师事务所江西博德律师事务所</p>
+					                        <div class="_btn_box">
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml deputy_bg_color">阅读</a>
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml deputy_bg_color">下载</a>
+					                        </div>
+					                    </div>
+					                </div>
+					            </li>
+					            <li class="list_lst">
+					                <div class="_cont">
+					                    <img src="images/9898.jpg" class="_img_100"/>
+					                    <div class="_rt">
+					                        <p class="_dw">江西博德律师事务所江西博德律师事务所江西博德律师事务所</p>
+					                        <div class="_btn_box main_color">
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+					                        </div>
+					                    </div>
+					                </div>
+					            </li>
+					            <li class="list_lst">
+					                <div class="_cont">
+					                    <img src="images/9898.jpg" class="_img_100"/>
+					                    <div class="_rt">
+					                        <p class="_name">王楠</p>
+					                        <p class="_dw">江西博德律师事务所</p>
+					                        <div class="_btn_box">
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+					                            <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+					                        </div>
+					                    </div>
+					                </div>
+					            </li>
+					        </ul>
+					    </div>
+					    <div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+					    	<ol>
+					    		<li>
+					    			<a class="on">更名<i class="fa fa-angle-up"></i></a>
+					    			<p class="chenga_name_sel">
+					    				<span>电子期刊</span>
+					    			</p>
+					    		</li>
+					    		<li><a class="modular_set pub_mask">设置</a></li>
+					    		<li><a class="clearMod">去除</a></li>
+					    		<li><a href="">加数据</a></li>
+					    	</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>  
+					</div> -->
+				</div>
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_2 edi moveMod" DR_drag="1" DR_replace="1"
+					data-name="章程"
+					data-line="line_2"
+					data-type="news_tab"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="list_box">
+							<ul class="hd_ul bot_main_color">
+								<li class="hd_lst cur main_color" title="章程">章程</li>
+								<li class="hd_lst" title="简介">简介</li>
+								<li class="hd_lst" title="入会须知">入会须知</li>
+							</ul>
+							<div class="list_cont">
+								<div class="cont_one">
+									<div class="_detail">九三学社是以科学技术界高、中级知识分子为主的具有政治联盟特点的政党，是接受中国共产党领导、同中国共产党通力合作..
+										<a href="javascript:void(0)" class="_account text_color">[详细]</a>
+									</div>
+								</div>
+								<div class="cont_one" style="display: none;">2</div>
+								<div class="cont_one" style="display: none;">3</div>
+							</div>
+						</div>
+						<div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+							<ol>
+								<li>
+									<a class="on">更名
+										<i class="fa fa-angle-up"></i>
+									</a>
+									<p class="chenga_name_sel">
+										<span>章程</span>
+										<span>简介</span>
+										<span>入会须知</span>
+									</p>
+								</li>
+								<li>
+									<a class="modular_set pub_mask">设置</a>
+								</li>
+								<li>
+									<a class="chooseStyle">风格</a>
+								</li>
+								<li>
+									<a href="">加数据</a>
+								</li>
+							</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+					</div>
+					<div class="line_2 edi addMod" DR_drag="1" DR_replace="1"
+					data-name=""
+					data-line="line_2"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+					<!-- <div class="line_2 edi moveMod" DR_drag="1" DR_replace="1">
+					    <div class="list_box">
+					        <p class="list_hd bot_main_color">问卷调查</p>
+					        <ul class="list_ul">
+					            <li class="list_lst que_box">
+					                <div class="_cont">
+					                    <p class="que_name">上班族如何平衡工作与生活调查</p>
+					                    <div class="que_cont">
+					                        <p class="_name">创建人：伟盼秋</p>
+					                        <a href="javascript:void(0)" class="_btn btn_primary btn_mid deputy_bg_color">我要参与</a>
+					                        <p class="_count">已有<i class="num text_color">10</i>人参与</p>
+					                    </div>
+					                </div>
+					            </li>
+					        </ul>
+					    </div>
+					    <div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+					    	<ol>
+					    		<li>
+					    			<a class="on">更名<i class="fa fa-angle-up"></i></a>
+					    			<p class="chenga_name_sel">
+					    				<span>问卷调查</span>
+					    			</p>
+					    		</li>
+					    		<li><a class="modular_set pub_mask">设置</a></li>
+					    		<li><a class="clearMod">去除</a></li>
+					    		<li><a href="">加数据</a></li>
+					    	</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>  
+					</div> -->
+				</div>
+				<!-- 域编辑 -->
+				<div class="edi_line">
+					<div class="layout_set">
+						<div class="layout">
+							<p class="new_layout">
+								<i class="fa fa-plus"></i>新增布局</p>
+							<p class="copy_layout">
+								<i class="fa fa-files-o"></i>复制布局</p>
+						</div>
+						<div class="up_down">
+							<p class="up">
+								<i class="fa fa-arrow-up"></i>
+							</p>
+							<p class="down">
+								<i class="fa fa-arrow-down"></i>
+							</p>
+						</div>
+					</div>
+					<div class="lay_hei">
+						<div class="hei_set">
+							<span>高度:</span>
+							<label>
+								<input type="radio" name="" checked value="默认">
+								<i></i>默认</label>
+							<label>
+								<input type="radio" name="" value="加高">
+								<i></i>加高</label>
+						</div>
+						<div class="lay_but">
+							<p class="changeLayout">换布局</p>
+							<p class="delMod">删除</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wra_width980 field_wra" type="field">
+			<div class="field">
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_1 edi addMod" DR_drag="1" DR_replace="1"
+					data-name=""
+					data-line="line_1"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+				</div>
+				<div class="wid480 column" data-wid="wid480">
+					<div class="line_2 edi addMod" DR_drag="1" DR_replace="1" 
+					data-name=""
+					data-line="line_2"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+					</div>
+					<div class="line_2 edi addMod" DR_drag="1" DR_replace="1" 
+					data-name=""
+					data-line="line_2"
+					data-type="none"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					>
+						<div class="addModT_sty">
+							<i></i>
+							<p>添加栏目</p>
+						</div>
+						<i class="drag"></i>
+					</div>
+				</div>
+				<div class="wid240 column" data-wid="wid240">
+					<div class="line_1 edi moveMod" DR_drag="1" DR_replace="1" 
+					data-name="捐赠途径"
+					data-line="line_1"
+					data-type="jz"
+					data-columnId="" 
+					data-count="" 
+					data-activityType=""
+					data-wkType=""
+					data-postId=""
+					
+					>
+						<div class="list_box">
+							<p class="list_hd bot_main_color">捐赠途径</p>
+							<ul class="list_ul img_ul_2">
+								<li class="list_lst">
+									<div class="_cont">
+										<div class="_img_100">
+											<p class="img_60 com_icon icon_1"></p>
+											<i class="_tip">在线捐赠</i>
+										</div>
+										<div class="_img_100">
+											<p class="img_60 com_icon icon_2"></p>
+											<i class="_tip">物品捐赠</i>
+										</div>
+									</div>
+								</li>
+								<li class="list_lst">
+									<div class="_cont">
+										<div class="_img_100">
+											<p class="img_60 com_icon icon_3"></p>
+											<i class="_tip">预约捐赠</i>
+										</div>
+										<div class="_img_100">
+											<p class="img_60 com_icon icon_4"></p>
+											<i class="_tip">银行捐款</i>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="mod_edi_but">
+							<div class="chenga_name">
+								<input type="text" placeholder="标题名称">
+								<a>确定</a>
+								<a>取消</a>
+							</div>
+							<ol>
+								<li>
+									<a class="on">更名
+										<i class="fa fa-angle-up"></i>
+									</a>
+									<p class="chenga_name_sel">
+										<span>捐赠途径</span>
+									</p>
+								</li>
+								<li>
+									<a class="modular_set pub_mask">设置</a>
+								</li>
+								<li>
+										<a class="chooseStyle">风格</a>
+								</li>
+								<li>
+									<a href="">加数据</a>
+								</li>
+							</ol>
+						</div>
+						<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+					</div>
+				</div>
+				<!-- 域编辑 -->
+				<div class="edi_line">
+					<div class="layout_set">
+						<div class="layout">
+							<p class="new_layout">
+								<i class="fa fa-plus"></i>新增布局</p>
+							<p class="copy_layout">
+								<i class="fa fa-files-o"></i>复制布局</p>
+						</div>
+						<div class="up_down">
+							<p class="up">
+								<i class="fa fa-arrow-up"></i>
+							</p>
+							<p class="down">
+								<i class="fa fa-arrow-down"></i>
+							</p>
+						</div>
+					</div>
+					<div class="lay_hei">
+						<div class="hei_set">
+							<span>高度:</span>
+							<label>
+								<input type="radio" name="" checked value="默认">
+								<i></i>默认</label>
+							<label>
+								<input type="radio" name="" value="加高">
+								<i></i>加高</label>
+						</div>
+						<div class="lay_but">
+							<p class="changeLayout">换布局</p>
+							<p class="delMod">删除</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wra_width980 field_wra">
+			<div class="field">
+				<div class="wid980 addLine edi">
+					<span>
+						<i></i>添加新布局</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer top_show main_color" style="background-color:#c98c70;margin-top:0px;">
+		<div class="footer_0">
+			<div class="wra_width980 foot showBut" style="width:980px;height:170px;">
+				<div class="sel_line edi showBut">
+					<div class="sel">
+						<p>相关单位
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a href="">相关单位</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sel">
+						<p>兄弟党派
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a href="">兄弟党派</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sel">
+						<p>下属组织
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a href="">下属组织</a>
+							</li>
+							<li>
+								<a href="">下属组织</a>
+							</li>
+							<li>
+								<a href="">下属组织</a>
+							</li>
+						</ul>
+					</div>
+					<div class="set_hide">
+						<a class="hide">隐藏</a>
+					</div>
+				</div>
+				<div class="record_0 showBut edi">
+					<p>京公网安备 11010802021324号 京ICP备05040745号 copyright 2003 www.93.gov.cn All rights reserved.</p>
+					<p>意见反馈平台提供：大尾猿技术主办：江西北软科技系统工程有限公司</p>
+					<div class="footBut_info but">
+						<a class="bottom_set pub_mask">信息设置</a>
+					</div>
+				</div>
+				<div class="footBut but">
+					<a class="bottom_set pub_mask">底部设置</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// 初始化顶部内容padding高度
+	var lineHeight = ($('.right_number_5').find('.modify_height').val() - $('.top_line').height()) / 2;
+	$('.topBack').find('.top_line').css('padding', lineHeight + 'px 0');
+	var startdrag = 0;
+	var stopsave = 0;
+	var addMod_html = '';
+	addMod_html += '<div class="line_1 edi addMod" DR_drag="1" DR_replace="1">';
+	addMod_html += '<div class="addModT_sty">';
+	addMod_html += '<i></i>';
+	addMod_html += '<p>添加栏目</p>';
+	addMod_html += '</div><i class="drag"></i></div></div>';
+
+
+	// nav导航栏目 移入移出显示下拉菜单
+	$('body').on({
+		'mouseenter': function () {
+			$(this).find('.childNav').stop(false, true).slideDown();
+			$(this).children('a').css({
+				backgroundColor: '#c98c70'
+			})
+			$(this).find('.childNav').css({
+				// width: '120px',
+				top: $('.nav_top').height() + 'px',
+			})
+		},
+		'mouseleave': function () {
+			$(this).find('.childNav').stop(false, true).slideUp();
+			$(this).children('a').css({
+				backgroundColor: ''
+			})
+		}
+	}, '.navMove li');
+
+	// 轮播图
+	$(".fullSlide").hover(function () {
+			$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5);
+		},
+		function () {
+			$(this).find(".prev,.next").fadeOut();
+		});
+	$(".L_1").slide({
+		titCell: ".hd ul",
+		mainCell: ".bd ul",
+		effect: "fade",
+		autoPlay: true,
+		autoPage: true,
+		trigger: "click",
+		startFun: function (i) {
+			var curLi = $(".L_1 .bd li").eq(i);
+			if (!!curLi.attr("_src")) {
+				curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+			}
+		}
+	});
+	$(".L_2").each(function () {
+		var thisObj = $(this);
+		thisObj.slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			effect: "left",
+			autoPlay: true,
+			autoPage: true,
+			trigger: "click",
+			startFun: function (i) {
+				var curLi = thisObj.find(".bd li").eq(i);
+
+				if (!!curLi.attr("_src")) {
+					curLi.css("background-image", curLi.attr("_src")).removeAttr("_src");
+				};
+				if (!!curLi.attr("_title")) {
+					thisObj.find(".tit").text(curLi.attr("_title"));
+				};
+			}
+		});
+	});
+
+	$(".hd_ul").on("click", ".hd_lst", function (e) {
+		$(this).addClass("cur").siblings().removeClass("cur");
+		var $index = $(this).index()
+		$(this).parent().next().find(".cont_one").eq($index).show().siblings().hide();
+		e.stopPropagation();
+	});
+
+	$(document).on("mouseenter mouseleave", ".personal_center", function (e) {
+		if (e.type == "mouseenter") {
+			$(this).children(".down_con").show();
+		} else {
+			$(this).children(".down_con").hide();
+		}
+	});
+
+</script>

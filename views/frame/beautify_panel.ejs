@@ -1,0 +1,425 @@
+<!-- 美化效果面板 -->
+    <h3><span>美化效果</span></h3>
+    <div class="line_num"><a class="on" tab="0">外观</a><a tab="1">推荐</a></div>
+    <div class="line_con" style="width:508px;left:0;">
+        <div class="out" id="a1">
+            <div class="inner" id="b1">
+                <div>
+                    <div id="picker"></div>
+                    <div class="change_color">
+                        <strong><em>主色</em></strong>
+                        <p><input type="text" value="<%-commonjson.pageColor.mainColor%>" class="colorwell color_radio_0"></p>
+                    </div>
+                    <div class="change_color">
+                        <strong><em>副色</em></strong>
+                        <p><input type="text" value="<%-commonjson.pageColor.deputyColor%>" class="colorwell color_radio_1"></p>
+                    </div>
+                    <div class="change_color bg_set column_upload">
+                            <div class="bg_color_img"><a class="on">栏目背景</a><a>栏目背景图</a></div>
+                            <div class="bg_style"><p><input type="text" value="<%-commonjson.pageColor.columnColor%>"  class="colorwell color_radio_2"></p></div>
+                            <div class="bg_style bgStyle_set">
+                                <div class="up_img">
+                                    <div class="show_img"><i class="fa fa-camera"></i><% if ( commonjson.pageColor.backgroundImages != undefined || commonjson.pageColor.backgroundImages != '' ) { %><img src="<%-commonjson.pageColor.backgroundImages%>"  class="img" /> <% } %></div>
+                                    <div class="up_but"><label><a  class="upload"><i class="fa fa-camera"></i>上传<input type="file" name="filename" accept="image/gif,image/jpeg,image/jpg,image/png"></a></label><a class="eliminate"><i class="fa fa-times"></i>清除</a></div>
+                                </div>
+                                <div class="bg_position">
+                                    <h3><span>背景位置</span></h3>
+                                    <div class="location_sele clearfix">
+                                        <a class="posi_top on"><em></em><input type="radio" name="bj_img_posi" ></a>
+                                        <a class="posi_middle"><em></em><input type="radio" name="bj_img_posi" checked></a>
+                                        <a class="posi_bottom"><em></em><input type="radio" name="bj_img_posi"></a>
+                                    </div>
+                                </div>
+                                <div class="repeat">
+                                    <span><em>不重复</em><i class="fa fa-sort-down"></i></span>
+                                    <ul>
+                                        <li><a class="repeat_btn" data-repeat="no-repeat">不重复</a></li>
+                                        <li><a class="repeat_btn" data-repeat="repeat-x">水平方向重复</a></li>
+                                        <li><a class="repeat_btn" data-repeat="repeat-y">垂直方向重复</a></li>
+                                        <li><a class="repeat_btn" data-repeat="repeat">填充</a></li>
+                                    </ul>
+                                    <input type="hidden" value="不重复">
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="change_color">
+                        <strong><em>栏目文字</em></strong>
+                        <p><input type="text" value="<%-commonjson.pageColor.textColor%>" class="colorwell color_radio_3"></p>
+                    </div>
+                    <div class="change_color bg_set bg_upload">
+                        <div class="bg_color_img"><a class="on">背景颜色</a><a>背景图片</a></div>
+                        <div class="bg_style"><p><input type="text" value="<%-commonjson.pageColor.backgroundColor%>" class="colorwell color_radio_4" id="backgroundColor"></p></div>
+                        <div class="bg_style bgStyle_set">
+                            <div class="up_img">
+                                <div class="show_img"><i class="fa fa-camera"></i><% if ( commonjson.pageColor.backgroundImages != undefined || commonjson.pageColor.backgroundImages != '' ) { %><img src="<%-commonjson.pageColor.backgroundImages%>"  class="img" /> <% } %></div>
+                                <div class="up_but"><label><a class="upload"><i class="fa fa-camera"></i>上传<input type="file" name="filename" accept="image/gif,image/jpeg,image/jpg,image/png"></a></label><a class="eliminate"><i class="fa fa-times"></i>清除</a></div>
+                            </div>
+                            <div class="bg_position">
+                                <h3><span>背景位置</span></h3>
+                                <div class="location_sele clearfix">
+                                    <a class="posi_top on"><em></em><input type="radio" name="bj_img_posi" ></a>
+                                    <a class="posi_middle"><em></em><input type="radio" name="bj_img_posi" checked></a>
+                                    <a class="posi_bottom"><em></em><input type="radio" name="bj_img_posi"></a>
+                                </div>
+                            </div>
+                            <div class="repeat">
+                                <span><em>不重复</em><i class="fa fa-sort-down"></i></span>
+                                <ul>
+                                    <li><a class="repeat_btn">不重复</a></li>
+                                    <li><a class="repeat_btn">水平方向重复</a></li>
+                                    <li><a class="repeat_btn">垂直方向重复</a></li>
+                                    <li><a class="repeat_btn">填充</a></li>
+                                </ul>
+                                <input type="hidden" value="不重复">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preservation_but"><a>保存</a></div>
+                </div>
+            </div>
+
+            <!-- <div class="scrollbar" id="d1">
+                <div class="scrollbtn" id="c1"></div>
+            </div> -->
+        </div>
+        <div class="out" id="a2">
+            <div class="inner" id="b2">
+                <div class="main_vice">
+                    <ul>
+                        <li>
+                            <label class="on" frontView="#2b2e4a" backgroundColor="#903749">
+                                <div class="color_block">
+                                    <span class="c_2b2e4a"></span>
+                                    <span class="c_903749"></span>
+                                </div>
+                                <div class="color_checked">
+                                    <em>使用中</em>
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                                <input type="radio" name="color_sel" checked>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#38817a" backgroundColor="#56bfb5">
+                                <div class="color_block">
+                                    <span class="c_38817a"></span>
+                                    <span class="c_56bfb5"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#484cb0" backgroundColor="#526ed0">
+                                <div class="color_block">
+                                    <span class="c_484cb0"></span>
+                                    <span class="c_526ed0"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#655989" backgroundColor="#de88a5">
+                                <div class="color_block">
+                                    <span class="c_655989"></span>
+                                    <span class="c_de88a5"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#222831" backgroundColor="#393e46">
+                                <div class="color_block">
+                                    <span class="c_222831"></span>
+                                    <span class="c_393e46"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#5e1043" backgroundColor="#a13f80">
+                                <div class="color_block">
+                                    <span class="c_5e1043"></span>
+                                    <span class="c_a13f80"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#c83b4c" backgroundColor="#f75b5b">
+                                <div class="color_block">
+                                    <span class="c_c83b4c"></span>
+                                    <span class="c_f75b5b"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#1a2634" backgroundColor="#203e5f">
+                                <div class="color_block">
+                                    <span class="c_1a2634"></span>
+                                    <span class="c_203e5f"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#b42b3f" backgroundColor="#e42f45">
+                                <div class="color_block">
+                                    <span class="c_b42b3f"></span>
+                                    <span class="c_e42f45"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#a66d53" backgroundColor="#c98c70">
+                                <div class="color_block">
+                                    <span class="c_a66d53"></span>
+                                    <span class="c_c98c70"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#3f4c48" backgroundColor="#95977a">
+                                <div class="color_block">
+                                    <span class="c_3f4c48"></span>
+                                    <span class="c_95977a"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#062c80" backgroundColor="#0e6ac7">
+                                <div class="color_block">
+                                    <span class="c_062c80"></span>
+                                    <span class="c_0e6ac7"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#46265c" backgroundColor="#794d9a">
+                                <div class="color_block">
+                                    <span class="c_46265c"></span>
+                                    <span class="c_794d9a"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#543d46" backgroundColor="#5da7ae">
+                                <div class="color_block">
+                                    <span class="c_543d46"></span>
+                                    <span class="c_5da7ae"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#8d0033" backgroundColor="#bd3246">
+                                <div class="color_block">
+                                    <span class="c_8d0033"></span>
+                                    <span class="c_bd3246"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#2f2342" backgroundColor="#e42f45">
+                                <div class="color_block">
+                                    <span class="c_2f2342"></span>
+                                    <span class="c_e42f45"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#6f3826" backgroundColor="#b84a39">
+                                <div class="color_block">
+                                    <span class="c_6f3826"></span>
+                                    <span class="c_b84a39"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#333a7b" backgroundColor="#4b6982">
+                                <div class="color_block">
+                                    <span class="c_333a7b"></span>
+                                    <span class="c_4b6982"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#266352" backgroundColor="#128061">
+                                <div class="color_block">
+                                    <span class="c_266352"></span>
+                                    <span class="c_128061"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#0c3c78" backgroundColor="#04879c">
+                                <div class="color_block">
+                                    <span class="c_0c3c78"></span>
+                                    <span class="c_04879c"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#0066cc" backgroundColor="#0099ff">
+                                <div class="color_block">
+                                    <span class="c_0066cc"></span>
+                                    <span class="c_0099ff"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#634258" backgroundColor="#6d6087">
+                                <div class="color_block">
+                                    <span class="c_634258"></span>
+                                    <span class="c_6d6087"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#314357" backgroundColor="#456672">
+                                <div class="color_block">
+                                    <span class="c_314357"></span>
+                                    <span class="c_456672"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#083d56" backgroundColor="#0e5f76">
+                                <div class="color_block">
+                                    <span class="c_083d56"></span>
+                                    <span class="c_0e5f76"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#303242" backgroundColor="#394359">
+                                <div class="color_block">
+                                    <span class="c_303242"></span>
+                                    <span class="c_394359"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#504077" backgroundColor="#924992">
+                                <div class="color_block">
+                                    <span class="c_504077"></span>
+                                    <span class="c_924992"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label frontView="#cd4439" backgroundColor="#72b896">
+                                <div class="color_block">
+                                    <span class="c_cd4439"></span>
+                                    <span class="c_72b896"></span>
+                                </div>
+                                <input type="radio" name="color_sel">
+                                <div class="color_checked">
+                                    <i class="fa fa-check-circle"></i>
+                                </div>
+                            </label>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="scrollbar" id="d2">
+                <div class="scrollbtn" id="c2"></div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,910 @@
+
+    <!-- 右侧弹出模块 -->
+    <!-- logo -->
+<div class="operation_panel layout right_number_0">
+<h3><span>网站LOGO</span></h3>
+<div class="out" style="margin:0 6px;">
+    <div class="inner">
+        <div class="logo_set">
+            <div class="upImg_wra up_img">
+                <div class="upImg_show show_img"><i class="fa fa-camera"></i></div>
+                <div class="upImg_but">
+                    <a class="upLogo"><i class="fa fa-camera"></i>上传<input type="file" accept="image/gif,image/jpeg,image/jpg,image/png"></a>
+                    <a class="clearLogo"><i class="fa fa-close"></i>清除</a>
+                </div>
+            </div>
+            <div class="logo_size">
+                <div class="logo_modify_input"><p>修改长度：</p><input type="text" class="width"></div>
+                <div class="logo_modify_input"><p>修改高度：</p><input type="text" class="height"></div>
+                <div class="logo_modify_input">
+                    <p>是否显示：</p>
+                    <div class="select_down changeDisplay floatLeft marLeft22">
+                        <p class="wid48"><%-logojson.doesShow[1]%><i class="fa fa-caret-down"></i></p>
+                        <ol>
+                            <li>是</li>
+                            <li>否</li>
+                        </ol>
+                        <input type="hidden" class="doesShow" value="<%-logojson.doesShow[1]%>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preservation_but"><a>保存</a></div>
+    </div>
+</div>
+</div>
+<!-- webName -->
+<div class="operation_panel layout right_number_1">
+<h3><span>网站名称</span></h3>
+<div class="out scroll" style="margin:0 6px;">
+    <div class="inner">
+        <div id="picker2"></div>
+        <div class="change_color">
+            <strong><em>主色</em></strong>
+            <p><input type="text" value="<% if ( titlejson.color == undefined || titlejson.color == "" ) { %> #444 <% }else{%><%-titlejson.color%> <% } %>"  class="colorwell2"></p>
+        </div>
+        <div class="logo_set marTop20">
+            <div class="textarea_name">
+                <textarea class="editText"><%-titlejson.textarea%></textarea>
+            </div>
+            <div class="logo_size">
+                <div class="logo_modify_input">
+                    <p>大小：</p>
+                    <div class="select_down floatLeft marLeft10">
+                        <p class="wid88"><%-titlejson.fontSize%><i class="fa fa-caret-down"></i></p>
+                        <ol>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                        </ol>
+                        <input type="hidden" class="font_size" value="<%-titlejson.fontSize%>">
+                    </div>
+                </div>
+                <div class="logo_modify_input">
+                    <p>字体：</p>
+                    <div class="select_down floatLeft marLeft10">
+                        <p class="wid88"><%-titlejson.fontFamily%><i class="fa fa-caret-down"></i></p>
+                        <ol>
+                            <li>微软雅黑</li>
+                            <li>宋体</li>
+                            <li>黑体</li>
+                        </ol>
+                        <input type="hidden" class="font_family" value="<%-titlejson.fontFamily%>">
+                    </div>
+                </div>
+                <div class="logo_modify_input">
+                    <p>显示：</p>
+                    <div class="select_down floatLeft marLeft10">
+                        <p class="wid88"><%-titlejson.doesShow[1]%><i class="fa fa-caret-down"></i></p>
+                        <ol>
+                            <li>是</li>
+                            <li>否</li>
+                        </ol>
+                        <input type="hidden" class="doesShow" value="<%-titlejson.doesShow[1]%>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preservation_but"><a>保存</a></div>
+    </div>
+</div>
+</div>
+<!-- title -->
+<div class="operation_panel layout right_number_2">
+<h3><span>设置抬头</span></h3>
+<div class="line_num routine"><a class="on percentage50" tab="0">纯色</a><a class="percentage50" tab="1">图像</a></div>
+<div class="line_con" style="width:508px;right:0;">
+    <div class="out scroll" style="margin-top:10px;">
+        <div class="inner" style="width:194px;">
+            <div class="pad_10">
+                <div>
+                    <div id="picker3"></div>
+                    <div class="change_color">
+                        <strong><em>主色</em></strong>
+                        <p><input type="text" value="<% if( bannerjson.color != ""  ) { %> <%-bannerjson.color%> <% } else if ( bannerjson.colorDoesShow[0] == false ) { %> <%-bannerjson.beforeColor%> <% } else { %>  #000 <% } %>" class="colorwell3" style="background-color:#fff;"></p>
+                    </div>
+                    <div class="logo_set marTop20 wid70_p pad_0">
+                        <div class="logo_size">
+                            <div class="logo_modify_input">
+                                <p>规格：</p>
+                                <div class="select_down setWidth floatLeft marLeft10">
+                                    <p class="wid48"><%-bannerjson.widthSize%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>宽屏</li>
+                                        <li>窄屏</li>
+                                    </ol>
+                                    <input type="hidden" class="width" value="窄屏">
+                                </div>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>修改高度：</p>
+                                <input type="text" class="marLeft10 modify_height" value="<%-bannerjson.height%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>下间距(PX) ：</p>
+                                <input type="text" class="marLeft10 modify_marBot" value="<%-bannerjson.marBottom%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>是否显示：</p>
+                                <div class="select_down changeDisplay floatLeft marLeft10">
+                                    <p class="wid48"><%-bannerjson.colorDoesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>是</li>
+                                        <li>否</li>
+                                    </ol>
+                                    <input type="hidden"class="colorDoesShow"  value="<%-bannerjson.colorDoesShow[1]%>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preservation_but"><a>保存</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="out">
+        <div class="inner" style="width:194px;">
+            <div class="logo_set">
+                <div class="up_img padd_7">
+                    <div class="show_img"><i class="fa fa-camera"></i><% if ( bannerjson.backgroundImages != undefined && bannerjson.backgroundImages != '' ) { %><img src="<%-bannerjson.backgroundImages%>"  class="img" /> <% } %></div>
+                    <div class="up_but"><label><a class="upload"><i class="fa fa-camera"></i>上传<input type="file" accept="image/gif,image/jpeg,image/jpg,image/png"></a></label><a  class="eliminate"><i class="fa fa-times"></i>清除</a></div>
+                </div>
+                <div class="bg_position marTop20">
+                    <h3><span class="bg_283c50">背景位置</span></h3>
+                    <div class="location_sele">
+                        <a class="posi_top on"><em></em><input type="radio" name="bj_img_posi" checked></a>
+                        <a class="posi_middle"><em></em><input type="radio" name="bj_img_posi"></a>
+                        <a class="posi_bottom"><em></em><input type="radio" name="bj_img_posi"></a>
+                    </div>
+                </div>
+
+                <div class="logo_set marTop20 wid70_p pad_0">
+                    <div class="logo_size">
+                        <div class="logo_modify_input">
+                            <p>规格：</p>
+                            <div class="select_down setWidth floatLeft marLeft10">
+                                <p class="wid48"><%-bannerjson.widthSize%><i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>宽屏</li>
+                                    <li>窄屏</li>
+                                </ol>
+                                <input type="hidden" class="width" value="宽屏">
+                            </div>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>修改高度：</p>
+                            <input type="text" class="marLeft10 modify_height"  value="<%-bannerjson.height%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>下间距(PX) ：</p>
+                            <input type="text" class="marLeft10 modify_marBot" value="<%-bannerjson.marBottom%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>是否显示：</p>
+                            <div class="select_down changeDisplay floatLeft marLeft10">
+                                <p class="wid48"><%-bannerjson.imgDoesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>是</li>
+                                    <li>否</li>
+                                </ol>
+                                <input type="hidden" class="imgDoesShow" value="<%-bannerjson.imgDoesShow[1]%>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preservation_but"><a>保存</a></div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- footer -->
+<div class="operation_panel layout right_number_3">
+<h3><span>底部设置</span></h3>
+<div class="line_num routine"><a class="on percentage50" tab="0">纯色</a><a class="percentage50" tab="1">图像</a></div>
+<div class="line_con" style="width:508px;right:0;">
+    <div class="out scroll" style="margin-top:10px;">
+        <div class="inner" style="width:194px;">
+            <div class="pad_10">
+                <div>
+                    <div id="picker4"></div>
+                    <div class="change_color">
+                        <strong><em>主色</em></strong>
+                        <p><input type="text" value=""  class="colorwell4"></p>
+                    </div>
+                    <div class="logo_set marTop20 wid70_p pad_0">
+                        <div class="logo_size">
+                            <div class="logo_modify_input">
+                                <p>规格：</p>
+                                <div class="select_down setWidth floatLeft marLeft10">
+                                    <p class="wid48"><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>宽屏</li>
+                                        <li>窄屏</li>
+                                    </ol>
+                                    <input type="hidden" class="width" value="">
+                                </div>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>修改高度：</p>
+                                <input type="text" class="marLeft10 modify_height" value="" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>上间距(PX) ：</p>
+                                <input type="text" class="marLeft10 modify_marTop" value="" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>是否显示：</p>
+                                <div class="select_down changeDisplay floatLeft marLeft10">
+                                    <p class="wid48"><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>是</li>
+                                        <li>否</li>
+                                    </ol>
+                                    <input type="hidden" value="" class="colorDoesShow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preservation_but"><a>保存</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="out">
+        <div class="inner" style="width:194px;">
+            <div class="logo_set">
+                <div class="up_img padd_7">
+                    <div class="show_img"><i class="fa fa-camera"></i></div>
+                    <div class="up_but"><label><a  class="upload"><i class="fa fa-camera"></i>上传<input type="file" accept="image/gif,image/jpeg,image/jpg,image/png"></a></label><a class="eliminate"><i class="fa fa-times"></i>清除</a></div>
+                </div>
+                <div class="bg_position marTop20">
+                    <h3><span class="bg_283c50">背景位置</span></h3>
+                    <div class="location_sele">
+                        <a class="posi_top on"><em></em><input type="radio" name="bj_img_posi" checked></a>
+                        <a class="posi_middle"><em></em><input type="radio" name="bj_img_posi"></a>
+                        <a class="posi_bottom"><em></em><input type="radio" name="bj_img_posi"></a>
+                    </div>
+                </div>
+
+                <div class="logo_set marTop20 wid70_p pad_0">
+                    <div class="logo_size">
+                        <div class="logo_modify_input">
+                            <p>规格：</p>
+                            <div class="select_down setWidth floatLeft marLeft10">
+                                <p class="wid48">宽屏<i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>宽屏</li>
+                                    <li>窄屏</li>
+                                </ol>
+                                <input type="hidden" class="width" value="宽屏">
+                            </div>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>修改高度：</p>
+                            <input type="text" class="marLeft10" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>上间距(PX) ：</p>
+                            <input type="text" class="marLeft10 modify_marBot" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>是否显示：</p>
+                            <div class="select_down changeDisplay floatLeft marLeft10">
+                                <p class="wid48"><i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>是</li>
+                                    <li>否</li>
+                                </ol>
+                                <input type="hidden" class="imgDoesShow" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preservation_but"><a>保存</a></div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- chooseMod -->
+<div class="operation_panel layout right_number_4">
+        <h3><span>选择模块</span></h3>
+        <div class="line_num"><a class="on" tab="0">新闻栏目</a><a tab="1">辅助功能</a></div>
+            <div class="line_con" style="width:508px;left:0;">
+                <div class="out scroll">
+                    <div class="inner">
+                            <div class="sel_module">
+                                     <div class="module_con"> 
+                                        <!-- <div class="mod_tit">
+                                            <p class="mod_name"><i></i>所有模块</p>
+                                            <p class="angle_up"><a href=""><i class="fa fa-angle-up"></i></a></p>
+                                        </div> -->
+                                        <div class="mod_set" id="a8">
+                                            <div id="b8" style="width: 100%">
+                                                <div class="mod_all">
+                                                    <div class="mod_line">
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="news_0"
+                                                                data-name="新闻"
+                                                                data-type="news_0"
+                                                                data-columnId="1"
+                                                            ><i></i>新闻模块</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="img_0"
+                                                                data-name="图文"
+                                                                data-type="img_0"
+                                                                data-columnId="1"
+                                                                
+                                                            ><i></i>图文模块</label></dt>
+                                                            <dd><label><input type="checkbox"
+                                                                data-mod="img_1"
+                                                                data-name="社团动态"
+                                                                data-type="img_1"
+                                                            ><i></i>图文模块1</label></dd>
+                                                            <dd><label><input type="checkbox"
+                                                                data-mod="img_2"
+                                                                data-name="社团动态"
+                                                                data-type="img_2"
+                                                            ><i></i>图文模块2</label></dd>
+                                                            <dd><label><input type="checkbox" 
+                                                                data-mod="img_3"
+                                                                data-name="社团动态"
+                                                                data-type="img_3"
+                                                            ><i></i>图文模块3</label></dd>
+                                                            <dd><label><input type="checkbox"
+                                                                data-mod="img_4"
+                                                                data-name="社团动态"
+                                                                data-type="img_4"
+                                                            ><i></i>图文模块4</label></dd>
+                                                            <dd><label><input type="checkbox"
+                                                                data-mod="img_5"
+                                                                data-name="社团动态"
+                                                                data-type="img_5"
+                                                            ><i></i>图文模块5</label></dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="template_0"
+                                                                data-name="社团动态"
+                                                                data-type="template_0"
+                                                                ><i></i>新添加模块-0</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="template_1"
+                                                                data-name="社团动态"
+                                                                data-type="template_1"
+                                                                ><i></i>新添加模块-1</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="template_2"
+                                                                data-name="社团动态"
+                                                                data-type="template_2"
+                                                                ><i></i>新添加模块-2</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="template_3"
+                                                                data-name="社团动态"
+                                                                data-type="template_3"
+                                                                ><i></i>新添加模块-3</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="template_4"
+                                                                data-name="社团动态"
+                                                                data-type="template_4"
+                                                                ><i></i>新添加模块-4</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="list_0"
+                                                                data-name="社团动态"
+                                                                data-type="list_0"
+                                                                ><i></i>图标列表模块</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="apply_0"
+                                                                data-name="申请入会"
+                                                                data-type="apply_0"
+                                                                ><i></i>申请入会模块</label></dt>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt><label><input type="radio" name="chooseMod"
+                                                                data-mod="slide_0"
+                                                                data-name="社团动态"
+                                                                data-type="slide_0"
+                                                                ><i></i>轮播图模块</label></dt>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="out_wrap">
+                    <div class="out" id="a5">
+                        <div class="inner" id="b5">
+                            <div class="main_vice support_method">
+                                
+                                <div class="mod_line" >
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_1.png" alt="">
+                                            <label>
+                                                    <a class="add" data-mod-link="zydj_0">+ 添加</a>
+                                                    <input type="checkbox" class="isAdd">
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>资源对接模块</h3>
+                                        <p>作用：集合社团成员的商业或个人资源，建立社团的供求市场</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_2.png" alt="">
+                                            <label>
+                                                <a class="add" data-mod-link="help_0">+ 添加</a>
+                                                <input type="checkbox" class="isAdd">
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>帮帮忙-专家模块</h3>
+                                        <p>作用：建立社团
+                                            的专家团队，可
+                                            在线向专家提问
+                                            ,答疑解惑</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_3.png" alt="">
+                                            <label>
+                                                <a class="add" data-mod-link="quanzi_0">+ 添加</a>
+                                                <input type="checkbox" class="isAdd">
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>圈子</h3>
+                                        <p>作用：建立有相
+                                            同爱好、兴趣联
+                                            系在一起的社群。</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                        <img src="images/mod_icon_4.png" alt="">
+                                        <label>
+                                            <a class="add" data-mod-link="wenjuan_0">+ 添加</a>
+                                            <input type="checkbox" class="isAdd">
+                                        </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>调查问卷</h3>
+                                        <p>作用：用于调研
+                                            和投票</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_5.png" alt="">
+                                            <label>
+                                                <a class="add" data-mod-link="wenku_0">+ 添加</a>
+                                                <input type="checkbox" class="isAdd">
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>文库</h3>
+                                        <p>作用：为社团提
+                                            供资源分享，
+                                            学习园地</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_5.png" alt="">
+                                            <label>
+                                                <a class="add" data-mod-link="dzqk_0">+ 添加</a>
+                                                <input type="checkbox" class="isAdd">
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>电子期刊</h3>
+                                        <p>作用：在线阅读
+                                            与下载期刊服务</p>
+                                    </div>
+                                </div>
+                                <div class="mod_line">
+                                    <div class="left add_wrap">
+                                            <img src="images/mod_icon_5.png" alt="">
+                                            <label>
+                                                <a class="add" data-mod-link="jz_0">+ 添加</a>
+                                                <input type="checkbox" class="isAdd" >
+                                            </label>
+                                    </div>
+                                    <div class="left info_wrap">
+                                        <h3>捐赠</h3>
+                                        <p>作用：提供社员
+                                            在线捐赠，捐物
+                                            等</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="chooseMod_btn"><a>确定添加</a></div>
+                </div>
+                
+            </div>
+        
+        
+</div>
+<!-- top -->
+<div class="operation_panel layout right_number_5">
+<h3><span>顶部设置</span></h3>
+<div class="line_num routine"><a class="on percentage50" tab="0">纯色</a><a class="percentage50" tab="1">图像</a></div>
+<div class="line_con" style="width:508px;right:0;">
+    <div class="out scroll" style="margin-top:10px;">
+        <div class="inner" style="width:194px;">
+            <div class="pad_10">
+                <div>
+                    <div id="picker5"></div>
+                    <div class="change_color">
+                        <strong><em>背景颜色</em></strong>
+                        <p><input type="text" value="<% if( topjson.bgcolor == "" ||  topjson.bgcolor == undefined ) { %> #fff <% } else { %> <%-topjson.bgcolor%>  <% }%>"  class="colorwell5 top_colorwell_0"></p>
+                    </div>
+                    <div class="change_color">
+                        <strong><em>文字颜色</em></strong>
+                        <p><input type="text" value="<% if( topjson.fontColor == "" ||  topjson.fontColor == undefined ) { %> #fff <% } else { %> <%-topjson.fontColor%>  <% }%>"  class="colorwell5 top_colorwell_1" ></p>
+                    </div>
+                    <div class="change_color">
+                        <strong><em>按钮颜色</em></strong>
+                        <p><input type="text" value="<% if( topjson.btnColor == "" ||  topjson.btnColor == undefined ) { %> #fff <% } else { %> <%-topjson.btnColor%>  <% }%>"  class="colorwell5 top_colorwell_2" ></p>
+                    </div>
+                    <div class="logo_set marTop20 wid70_p pad_0">
+                        <div class="logo_size">
+                            <div class="logo_modify_input">
+                                <p>规格：</p>
+                                <div class="select_down setWidth floatLeft marLeft10">
+                                    <p class="wid48"><%-topjson.widthSize%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>宽屏</li>
+                                        <li>窄屏</li>
+                                    </ol>
+                                    <input type="hidden" class="width" value="窄屏">
+                                </div>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>修改高度：</p>
+                                <input type="text" class="marLeft10 modify_height" value="<%-topjson.height%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>下间距(PX) ：</p>
+                                <input type="text" class="marLeft10 modify_marBot"  value="<%-topjson.marBottom%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>是否显示：</p>
+                                <div class="select_down changeDisplay floatLeft marLeft10">
+                                    <p class="wid48"><%-topjson.colorDoesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>是</li>
+                                        <li>否</li>
+                                    </ol>
+                                    <input type="hidden" value="<%-topjson.colorDoesShow[1]%>" class="colorDoesShow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preservation_but"><a>保存</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="out">
+        <div class="inner" style="width:194px;">
+            <div class="logo_set">
+                <div class="up_img padd_7">
+                    <div class="show_img"><i class="fa fa-camera"></i></div>
+                    <div class="up_but"><label><a class="upload"><i class="fa fa-camera"></i>上传<input type="file" accept="image/gif,image/jpeg,image/jpg,image/png"></a></label><a  class="eliminate"><i class="fa fa-times"></i>清除</a></div>
+                </div>
+                <div class="bg_position marTop20">
+                    <h3><span class="bg_283c50">背景位置</span></h3>
+                    <div class="location_sele">
+                        <a class="posi_top on"><em></em><input type="radio" name="bj_img_posi" checked></a>
+                        <a class="posi_middle"><em></em><input type="radio" name="bj_img_posi"></a>
+                        <a class="posi_bottom"><em></em><input type="radio" name="bj_img_posi"></a>
+                    </div>
+                </div>
+
+                <div class="logo_set marTop20 wid70_p pad_0">
+                    <div class="logo_size">
+                        <div class="logo_modify_input">
+                            <p>规格：</p>
+                            <div class="select_down setWidth floatLeft marLeft10">
+                                <p class="wid48"><%-topjson.widthSize%><i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>宽屏</li>
+                                    <li>窄屏</li>
+                                </ol>
+                                <input type="hidden" class="width" value="宽屏">
+                            </div>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>修改高度：</p>
+                            <input type="text" class="marLeft10 modify_height" value="<%-topjson.height%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>下间距(PX) ：</p>
+                            <input type="text" class="marLeft10 modify_marBot" value="<%-topjson.marBottom%>"  onkeyup="value=value.replace(/[^\d]/g,'')";>
+                        </div>
+                        <div class="logo_modify_input">
+                            <p>是否显示：</p>
+                            <div class="select_down changeDisplay floatLeft marLeft10">
+                                <p class="wid48"><%-topjson.imgDoesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                <ol>
+                                    <li>是</li>
+                                    <li>否</li>
+                                </ol>
+                                <input type="hidden" value="<%-topjson.imgDoesShow[1]%>" class="imgDoesShow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preservation_but"><a>保存</a></div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- banner -->
+<div class="operation_panel layout right_number_6">
+<h3><span>轮播图设置</span></h3>
+<div class="line_num routine"><a class="on percentage50" tab="0">选择轮播图</a><a class="percentage50" tab="1">图像</a></div>
+<div class="line_con" style="width:508px;right:0;">
+    <div class="out scroll" style="margin-top:10px;">
+            <div class="inner" style="width:194px;">
+                    <div class="sel_module">
+                             <div class="module_con"> 
+                                <div class="mod_set" id="a8">
+                                    <div id="b8" style="width: 100%">
+                                        <div class="mod_all">
+                                            <div class="mod_line">
+                                                <dl>
+                                                    <dt><label><input type="radio" name="chooseMod"
+                                                        data-mod="slide_0"
+                                                        data-name="新闻"
+                                                        data-type="slide_0"
+                                                        data-columnId="1"
+                                                    ><i></i>轮播图-1</label></dt>
+                                                </dl>
+                                                <dl>
+                                                    <dt><label><input type="radio" name="chooseMod"
+                                                        data-mod="slide_1"
+                                                        data-name="新闻"
+                                                        data-type="slide_1"
+                                                        data-columnId="1"
+                                                    ><i></i>轮播图-2</label></dt>
+                                                </dl>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>	
+                            </div>
+                    </div>
+            </div>
+    </div>
+    <div class="out scroll" style="margin-top:10px;">
+        <div class="inner" style="width:194px;">
+            <div class="pad_10">
+                <div>
+                    <!-- <div id="picker6"></div> -->
+                    <!-- <div class="change_color">
+                        <strong><em>主色</em></strong>
+                        <p><input type="text" value="#000" class="colorwell6" style="background-color:#983380;"></p>
+                    </div> -->
+                    <div class="logo_set wid70_p pad_0">
+                        <div class="logo_size">
+                            <div class="logo_modify_input">
+                                <p>规格：</p>
+                                <div class="select_down setWidth floatLeft marLeft10">
+                                    <p class="wid48"><%-slidejson.widthSize%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>宽屏</li>
+                                        <li>窄屏</li>
+                                    </ol>
+                                    <input type="hidden" class="width" value="<%-slidejson.widthSize%>">
+                                </div>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>修改高度：</p>
+                                <input type="text" class="marLeft10 modify_height" value="<%-slidejson.height%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>上间距(PX) ：</p>
+                                <input type="text" class="marLeft10 modify_marTop" value="<%-slidejson.marTop%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <div class="logo_modify_input">
+                                <p>下间距(PX) ：</p>
+                                <input type="text" class="marLeft10 modify_marBot" value="<%-slidejson.marBottom%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
+                            </div>
+                            <!-- <form class="layui-form layui-form-pane" action=""> -->
+                                <div class="logo_modify_input">
+                                    <!-- <p class="left" style="color: #fff">模块显示：</p>
+                                    <div class="layui-input-block left marLeft10">
+                                        <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="是|否">
+                                        <input type="hidden" value="<%-slidejson.doesShow[1]%>" class="doesShow">
+                                    </div> -->
+                                    <p>模块显示：</p>
+                                    <div class="select_down changeDisplay floatLeft marLeft10">
+                                        <p class="wid48"><%-slidejson.doesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                        <ol>
+                                            <li>是</li>
+                                            <li>否</li>
+                                        </ol>
+                                        <input type="hidden" value="<%-slidejson.doesShow[1]%>" class="doesShow">
+                                    </div>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="preservation_but"><a>保存</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- footInfo -->
+<div class="operation_panel layout right_number_7">
+    <h3><span>底部信息</span></h3>
+    <div class="out scroll" style="margin:0 6px;">
+        <div class="inner">
+            <div id="picker7"></div>
+            <div class="change_color">
+                <strong><em>主色</em></strong>
+                <p><input type="text" value="<%-footjson.footInfo.fontColor%>" class="colorwell7"></p>
+            </div>
+            <div class="footer_set marTop20">
+                <div class="textarea_name">
+                        <div class="editor" id="foot_editTitle"></div>
+                        <div class="editor editor_text"  id="foot_editText"><%-footjson.footInfo.textarea%></div>
+                    <!-- <textarea class="editText"><%-footjson.footInfo.textarea%></textarea> -->
+                </div>
+            </div>
+            <div class="preservation_but"><a>保存</a></div>
+        </div>
+    </div>
+</div>
+<div class="operation_panel layout right_number_8">
+    <h3><span>更换底部风格</span></h3>
+    <div class="out scroll" id="a8" style="margin-top: 6px;">
+            <div class="inner" style="width:194px;">
+                    <div class="main_vice support_method">
+                        
+                        <div class="mod_line" >
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_1.png" alt="">
+                                    <label>
+                                            <a class="add" data-mod-link="zydj_0">+ 添加</a>
+                                            <input type="checkbox" class="isAdd">
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>资源对接模块</h3>
+                                <p>作用：集合社团成员的商业或个人资源，建立社团的供求市场</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_2.png" alt="">
+                                    <label>
+                                        <a class="add" data-mod-link="help_0">+ 添加</a>
+                                        <input type="checkbox" class="isAdd">
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>帮帮忙-专家模块</h3>
+                                <p>作用：建立社团
+                                    的专家团队，可
+                                    在线向专家提问
+                                    ,答疑解惑</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_3.png" alt="">
+                                    <label>
+                                        <a class="add" data-mod-link="quanzi_0">+ 添加</a>
+                                        <input type="checkbox" class="isAdd">
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>圈子</h3>
+                                <p>作用：建立有相
+                                    同爱好、兴趣联
+                                    系在一起的社群。</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                <img src="images/mod_icon_4.png" alt="">
+                                <label>
+                                    <a class="add" data-mod-link="wenjuan_0">+ 添加</a>
+                                    <input type="checkbox" class="isAdd">
+                                </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>调查问卷</h3>
+                                <p>作用：用于调研
+                                    和投票</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_5.png" alt="">
+                                    <label>
+                                        <a class="add" data-mod-link="wenku_0">+ 添加</a>
+                                        <input type="checkbox" class="isAdd">
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>文库</h3>
+                                <p>作用：为社团提
+                                    供资源分享，
+                                    学习园地</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_5.png" alt="">
+                                    <label>
+                                        <a class="add" data-mod-link="dzqk_0">+ 添加</a>
+                                        <input type="checkbox" class="isAdd">
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>电子期刊</h3>
+                                <p>作用：在线阅读
+                                    与下载期刊服务</p>
+                            </div>
+                        </div>
+                        <div class="mod_line">
+                            <div class="left add_wrap">
+                                    <img src="images/mod_icon_5.png" alt="">
+                                    <label>
+                                        <a class="add" data-mod-link="jz_0">+ 添加</a>
+                                        <input type="checkbox" class="isAdd" >
+                                    </label>
+                            </div>
+                            <div class="left info_wrap">
+                                <h3>捐赠</h3>
+                                <p>作用：提供社员
+                                    在线捐赠，捐物
+                                    等</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+<style>
+    .textarea_name .w-e-text-container .w-e-panel-container {
+        left: 26%;
+    }
+</style>

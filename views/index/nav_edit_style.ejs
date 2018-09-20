@@ -1,0 +1,33 @@
+<!-- 顶部导航外观设置 -->
+<div class="alert_set al_4">
+    <div class="alert_tit">导航外观设置</div>
+    <div class="tab_con">
+        <div class="nav_items_title">
+            <h3>首页</h3>
+        </div>
+        <% for(var i = 0; i < navjson.nav_line.length-1; i++) {%>
+            <div class="nav_items" id="navList_<%-i%>">
+                    <h3 class="title text_tip" data-show="<%-navjson.nav_line[i+1].show %>" data-tip="<%-navjson.nav_line[i+1].alias %>" data-name="<%-navjson.nav_line[i+1].name %>"><% if ( navjson.nav_line[i+1].alias != '' ) { %><%-navjson.nav_line[i+1].alias %><% } else { %><%-navjson.nav_line[i+1].name %><% }%></h3>
+                    <ul class="nav_item">
+                            <% for(var j = 0; j < navjson.nav_line[i+1].childNav.length; j++) { %>
+                                <li class="handle text_tip" id="navList_<%-i%>_sub_<%j%>" data-tip="<%-navjson.nav_line[i+1].childNav[j].alias %>" data-name="<%-navjson.nav_line[i+1].childNav[j].name %>"><% if ( navjson.nav_line[i+1].childNav[j].alias != '' ) { %><%-navjson.nav_line[i+1].childNav[j].alias %><% } else { %><%-navjson.nav_line[i+1].childNav[j].name %><% }%></li>
+                            <% } %>
+                    </ul>
+            </div>
+        <% } %>
+        <!-- <div class="nav_items">
+            <h3 class="title">栏目名称</h3>
+            <ul class="nav_item">
+                <li class="handle">栏目名称</li>
+                <li  class="handle">栏目名称</li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="btn_groups">
+        <div class="right">
+            <span>可对栏目进行拖拽调整位置</span>
+            <a class="cancel btn">取消</a>
+            <a class="sure btn">确定</a>
+        </div>
+    </div>
+</div>

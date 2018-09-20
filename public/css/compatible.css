@@ -1,0 +1,4 @@
+/* 解决background-size在IE不兼容 */
+.farbtastic .overlay,    .farbtastic .wheel, .change_color STRONG:after, .bg_position .location_sele a em {
+    background-image: none;
+}

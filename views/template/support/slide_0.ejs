@@ -1,0 +1,55 @@
+<div class="fullSlide L_2">
+        <div class="bd">
+            <ul>
+                <li _src="url(images/6.jpg)" _title="九三学社中央学习实践活动总结表11">
+                    <a href="#"></a>
+                </li>
+                <li _src="url(images/7.jpg)" _title="九三学社动员大会22">
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="hd">
+            <ul></ul>
+        </div>
+        <span class="prev"></span>
+        <span class="next"></span>
+        <div class="tit main_color" style="background-color:#af7b63;color:#fff;">九三学社动员大会</div>
+    </div>
+    <div class="mod_edi_but">
+        <ol>
+            <li>
+                <a class="modular_set pub_mask">设置</a>
+            </li>
+            <li>
+                    <a class="chooseStyle">风格</a>
+            </li>
+            <li>
+                <a href="">加数据</a>
+            </li>
+        </ol>
+    </div>
+    <div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+    <script>
+    $(".L_2").each(function () {
+		var thisObj = $(this);
+		thisObj.slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			effect: "left",
+			autoPlay: true,
+			autoPage: true,
+			trigger: "click",
+			startFun: function (i) {
+				var curLi = thisObj.find(".bd li").eq(i);
+
+				if (!!curLi.attr("_src")) {
+					curLi.css("background-image", curLi.attr("_src")).removeAttr("_src");
+				};
+				if (!!curLi.attr("_title")) {
+					thisObj.find(".tit").text(curLi.attr("_title"));
+				};
+			}
+		});
+	});
+    </script>

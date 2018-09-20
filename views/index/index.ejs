@@ -1,0 +1,402 @@
+<style>
+	.list_box {
+		position: relative;
+	}
+
+	.com_icon {
+		display: inline-block;
+		background: url("images/common.png") no-repeat;
+	}
+
+	.icon_1 {
+		background-position: 0 0;
+	}
+
+	.icon_2 {
+		background-position: -60px 0;
+	}
+
+	.icon_3 {
+		background-position: -120px 0;
+	}
+
+	.icon_4 {
+		background-position: -180px 0;
+	}
+
+	/* 主色 */
+
+	.main_color {
+		background-color: <%-commonjson.pageColor.mainColor %>;
+	}
+
+	/* 副色 */
+
+	.deputy_bg_color {
+		background-color: <%-commonjson.pageColor.deputyColor %>;
+	}
+
+	/* 导航颜色 */
+
+	.nav_bg_color {
+		background-color: <%-commonjson.pageColor.columnColor%>;
+	}
+
+	/* 导航文字颜色 */
+
+	.nav_text_color {
+		color: <%-commonjson.pageColor.textColor%>;
+	}
+
+	/* 导航文字滑过颜色 */
+
+	.nav_line ul li a:hover {}
+
+	/* 网页背景颜色 */
+
+	.frame {
+		background-color: <%-commonjson.pageColor.backgroundColor %>;
+	}
+</style>
+
+<div class="frame">
+	<div class="topLab" style="margin-bottom:0px">
+		<div class="wra_width980 hei40 edi showBut top_show topBack" style="width:<%-topjson.width%> ;height:<%-topjson.height %>px; 
+		<%if (topjson.bgcolor != undefined || topjson.bgcolor != '' ) { %>background-color:<%-topjson.bgcolor%>;<%}%>  
+		<%if (topjson.backgroundImages != undefined || topjson.backgroundImages != '' )  { %>
+			background-image: url(<%=topjson.backgroundImages%>); 
+			background-repeat: no-repeat; 
+		<% } %>
+		">
+			<div class="top_line">
+				<div class="my_admin">
+					<div class="user_name">
+						<span>
+							<i class="fa fa-user"></i>
+						</span>
+						<p class="top_font_color" style="color:<%-topjson.fontColor%>">admin</p>
+					</div>
+					<div class="personal_center">
+						<p  class="top_font_color" style="color:<%-topjson.fontColor%>">个人中心
+							<i class="fa fa-angle-down" style="color:<%-topjson.fontColor%>"></i>
+						</p>
+						<div class="down_con">
+							<ul>
+								<li>
+									<a href="">我的社团</a>
+								</li>
+								<li>
+									<a href="">我的帮帮忙</a>
+								</li>
+								<li>
+									<a href="">消息中心</a>
+								</li>
+								<li>
+									<a href="">我的文库</a>
+								</li>
+								<li>
+									<a href="">个人资料</a>
+								</li>
+								<li>
+									<a href="">我的问卷</a>
+								</li>
+								<li>
+									<a href="">我的资源</a>
+								</li>
+								<li>
+									<a href="">我的期刊</a>
+								</li>
+								<li>
+									<a href="">我的圈子</a>
+								</li>
+								<li>
+									<a href="">修改密码</a>
+								</li>
+								<li>
+									<a href="">我的活动</a>
+								</li>
+								<li>
+									<a href="">退出</a>
+								</li>
+							</ul>
+							<i></i>
+						</div>
+					</div>
+					<div class="admin_renovation">
+						<a href=""  class="top_font_color" style="color:<%-topjson.fontColor%>">管理社团</a>
+						<a href=""  class="top_font_color" style="color:<%-topjson.fontColor%>">网站装修</a>
+					</div>
+				</div>
+				<div class="top_search">
+					<form action="">
+						<input type="text" placeholder="输入关键词">
+						<a class="deputy_bg_color" style="background-color:<%-topjson.btnColor%>;color:#fff;">
+							<i class="fa fa-search"></i>
+						</a>
+					</form>
+				</div>
+				<div class="login">
+					<a class="deputy_bg_color top_btn_bg" style="background-color:<%-topjson.btnColor%>;color:#fff;">登录</a>
+					<a class="deputy_bg_color top_btn_bg" style="background-color:<%-topjson.btnColor%>;color:#fff;">注册</a>
+				</div>
+			</div>
+			<div class="but">
+				<a class="top_set pub_mask">顶部设置</a>
+			</div>
+		</div>
+	</div>
+	<div class="logo_line" style="margin-bottom:0px">
+		<div class="wra_width980 logoname showBut top_show" style="width:<%-bannerjson.width%> ;height:<%-bannerjson.height %>px; 
+			<% if (bannerjson.color != undefined && bannerjson.color != '') { %> 	background-color: <%-bannerjson.color%> <% } %>  
+			<% if (bannerjson.backgroundImages != undefined && bannerjson.backgroundImages != '' )  { %> background-image: url(<%-bannerjson.backgroundImages%>); background-repeat: no-repeat; <% } %>">
+			<div class="logo edi top_show" style="top:0;left:0;">
+				<img src="images/1.jpg" alt="">
+				<div class="set_hide">
+					<a class="logo_set_but pub_mask">设置</a>
+					<a class="hide">隐藏</a>
+				</div>
+			</div>
+			<div class="association_name edi top_show" style="top:21px;left:72px;">
+				<p style="<% if (titlejson.color != undefined ) { %>    color: <%-titlejson.color%> <% } else { %> color: #444 <% } %>; font-family: <%-titlejson.fontFamily %>; font-size: <%-titlejson.fontSize %>; ">
+					<%-titlejson.textarea %>
+				</p>
+				<div class="set_hide">
+					<a class="name_set_but pub_mask">设置</a>
+					<a class="hide">隐藏</a>
+				</div>
+			</div>
+			<div class="but">
+				<a class="set_rise pub_mask">设置抬头</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav_line nav_bg_color showBut" style="background-color:#a66d52;">
+		<div class="nav_top  hei40">
+			<ul id="sortable" class="navMove">
+				<li class="navList">
+					<a href="" class="nav_text_color" style="color:#fff;">首页</a>
+				</li>
+				<% for(var i = 0; i < navjson.nav_line.length-1; i++) {%>
+					<li class="navList <%-'navList_'+i%>" style="<%if( navjson.nav_line[i+1].show == false ) { %>display: none<% } %>">
+						<a href="" class="nav_text_color" style="color:#fff;">
+							<% if ( navjson.nav_line[i+1].alias == '' || navjson.nav_line[i+1].alias == undefined ) { %>
+								<%-navjson.nav_line[i+1].name%>
+									<% } else { %>
+										<%-navjson.nav_line[i+1].alias %>
+											<% } %>
+						</a>
+						<% if ( navjson.nav_line[i+1].childNav.length != 0 ) { %>
+							<ul class="childNav nav_bg_color">
+								<% for(var j = 0; j < navjson.nav_line[i+1].childNav.length; j++) {%>
+									<li>
+										<a href="" class="nav_text_color">
+												<% if ( navjson.nav_line[i+1].childNav[j].alias == '' || navjson.nav_line[i+1].childNav[j].alias == undefined ) { %>
+													<%-navjson.nav_line[i+1].childNav[j].name %>
+														<% } else { %>
+															<%-navjson.nav_line[i+1].childNav[j].alias %>
+																<% } %>
+										</a>
+									</li>
+									<% } %>
+							</ul>
+							<% } %>
+					</li>
+					<% } %>
+			</ul>
+			<div class="but nav_set_but">
+				<a>设置导航</a>
+			</div>
+			<div class="but nav_style_but">
+				<a>设置外观</a>
+			</div>
+		</div>
+	</div>
+	<div class="full top_show slideShow">
+		<div class="fullSlide L_1" style="width:<%-slidejson.width%>">
+			<div class="bd">
+				<ul>
+					<li _src="url(images/5.jpg)" style="background-color:#B8CED1">
+						<a href="#"></a>
+					</li>
+					<li _src="url(images/2.jpg)" style="background-color:#B8CED1">
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="hd">
+				<ul></ul>
+			</div>
+			<span class="prev"></span>
+			<span class="next"></span>
+		</div>
+		<div class="wra_width980 edi lbtbj showBut">
+			<div class="but">
+				<a class="slide_set pub_mask">设置效果</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		
+		<%-include('../frame/content',{
+			contentjson: contentjson
+		})%>
+	</div>
+	<div class="footer top_show main_color" style="background-color:#c98c70;margin-top:0px;">
+		<div class="footer_0">
+			<div class="wra_width980 foot showBut edi" style="width:980px;height:170px;">
+				<div class="sel_line showBut">
+					<div class="sel">
+						<p>相关单位
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a>相关单位</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sel">
+						<p>兄弟党派
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a>兄弟党派</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sel">
+						<p>下属组织
+							<span>
+								<i class="fa fa-angle-down"></i>
+							</span>
+						</p>
+						<ul>
+							<li>
+								<a >下属组织</a>
+							</li>
+							<li>
+								<a >下属组织1</a>
+							</li>
+							<li>
+								<a >下属组织2</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="record_0 showBut">
+					<div class="footInfo" style="color:<%-footjson.footInfo.fontColor%>">
+							<%-footjson.footInfo.textarea%>
+					</div>
+				</div>
+				<div class="footBut but" style="right: 102px">
+					<a class="bottom_set pub_mask left">底部设置</a>
+				</div>
+				<div class="footBut but">
+					<a class="bottom_style  pub_mask left">底部风格</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./js/index/index.js"></script>
+<script type="text/javascript">
+	index.init();
+
+	// 初始化顶部内容padding高度
+	var lineHeight = ($('.right_number_5').find('.modify_height').val() - $('.top_line').height()) / 2;
+	$('.topBack').find('.top_line').css('padding', lineHeight + 'px 0');
+	var startdrag = 0;
+	var stopsave = 0;
+	var addMod_html = '';
+	addMod_html += '<div class="line_1 edi addMod" DR_drag="1" DR_replace="1">';
+	addMod_html += '<div class="addModT_sty">';
+	addMod_html += '<i></i>';
+	addMod_html += '<p>添加栏目</p>';
+	addMod_html += '</div><i class="drag"></i></div></div>';
+
+
+	// nav导航栏目 移入移出显示下拉菜单
+	$('body').on({
+		'mouseenter': function () {
+			$(this).find('.childNav').stop(false, true).slideDown();
+			$(this).children('a').css({
+				backgroundColor: '#c98c70'
+			})
+			$(this).find('.childNav').css({
+				// width: '120px',
+				top: $('.nav_top').height() + 'px',
+			})
+		},
+		'mouseleave': function () {
+			$(this).find('.childNav').stop(false, true).slideUp();
+			$(this).children('a').css({
+				backgroundColor: ''
+			})
+		}
+	}, '.navMove li');
+
+	// 轮播图
+	$(".fullSlide").hover(function () {
+			$(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5);
+		},
+		function () {
+			$(this).find(".prev,.next").fadeOut();
+		});
+	$(".L_1").slide({
+		titCell: ".hd ul",
+		mainCell: ".bd ul",
+		effect: "fade",
+		autoPlay: true,
+		autoPage: true,
+		trigger: "click",
+		startFun: function (i) {
+			var curLi = $(".L_1 .bd li").eq(i);
+			if (!!curLi.attr("_src")) {
+				curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+			}
+		}
+	});
+	$(".L_2").each(function () {
+		var thisObj = $(this);
+		thisObj.slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			effect: "left",
+			autoPlay: true,
+			autoPage: true,
+			trigger: "click",
+			startFun: function (i) {
+				var curLi = thisObj.find(".bd li").eq(i);
+
+				if (!!curLi.attr("_src")) {
+					curLi.css("background-image", curLi.attr("_src")).removeAttr("_src");
+				};
+				if (!!curLi.attr("_title")) {
+					thisObj.find(".tit").text(curLi.attr("_title"));
+				};
+			}
+		});
+	});
+
+	$(".hd_ul").on("click", ".hd_lst", function (e) {
+		$(this).addClass("cur").siblings().removeClass("cur");
+		var $index = $(this).index()
+		$(this).parent().next().find(".cont_one").eq($index).show().siblings().hide();
+		e.stopPropagation();
+	});
+
+	$(document).on("mouseenter mouseleave", ".personal_center", function (e) {
+		if (e.type == "mouseenter") {
+			$(this).children(".down_con").show();
+		} else {
+			$(this).children(".down_con").hide();
+		}
+	});
+
+</script>

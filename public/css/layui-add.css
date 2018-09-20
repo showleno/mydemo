@@ -1,0 +1,18 @@
+/* layui修改样式 */
+/* 开关按钮样式修改 */
+.logo_set .logo_size .logo_modify_input .layui-form-onswitch {
+	background: url("../../newpc/images/bj_b.jpg");
+    border: 0;
+}
+.logo_set .logo_size .layui-form-pane .layui-form-switch {
+	margin-top: 4px;
+	margin-left: 2px;
+	min-width: 58px;
+}
+.logo_set .logo_size .layui-form-pane .layui-form-switch em {
+	margin-left: 36px;
+	font-size: 14px;
+}
+.logo_set .logo_size .logo_modify_input .layui-form-onswitch em {
+    margin-left: 5px;
+}

@@ -1,0 +1,142 @@
+<% for ( var i = 0 ; i< contentjson.planArr.length; i++ ) { %>
+        <div class="wra_width980 field_wra" type="field">
+                        <div class="field">
+                            <% for ( var j = 0 ; j< contentjson.planArr[i].length; j++ ) { %>
+                                <div class="<%-contentjson.planArr[i][j].wid%> column" data-wid="<%-contentjson.planArr[i][j].wid%>">
+                                    <!-- 第一行 -->
+                                    <% if ( contentjson.planArr[i][j].type == 'none' ) { %>
+                                                <div class="<%-contentjson.planArr[i][j].line%> edi addMod" DR_drag="1" DR_replace="1" 
+                                                    data-name="<%-contentjson.planArr[i][j].name%>"
+                                                    data-type="<%-contentjson.planArr[i][j].type%>"
+                                                    data-line="<%-contentjson.planArr[i][j].line%>"
+                                                    data-columnId="<%-contentjson.planArr[i][j].columnId%>" 
+                                                    data-count="<%-contentjson.planArr[i][j].count%>" 
+                                                    data-activityType="<%-contentjson.planArr[i][j].activityType%>"
+                                                    data-wkType="<%-contentjson.planArr[i][j].wkType%>"
+                                                    data-postId="<%-contentjson.planArr[i][j].postId%>"
+                                                >
+                
+                                                    <div class="addModT_sty">
+                                                            <i></i>
+                                                            <p>添加栏目</p>
+                                                    </div>
+
+                                                    <i class="drag"></i>
+                                                </div>
+                                            <% } else { %>
+                                                <div class="<%-contentjson.planArr[i][j].line%> edi moveMod" DR_drag="1" DR_replace="1" 
+                                                    data-name="<%-contentjson.planArr[i][j].name%>"
+                                                    data-type="<%-contentjson.planArr[i][j].type%>"
+                                                    data-line="<%-contentjson.planArr[i][j].line%>"
+                                                    data-columnId="<%-contentjson.planArr[i][j].columnId%>" 
+                                                    data-count="<%-contentjson.planArr[i][j].count%>" 
+                                                    data-activityType="<%-contentjson.planArr[i][j].activityType%>"
+                                                    data-wkType="<%-contentjson.planArr[i][j].wkType%>"
+                                                    data-postId="<%-contentjson.planArr[i][j].postId%>"
+                                                    >
+                                                    
+                                                    <%-include('../template/'+contentjson.planArr[i][j].type, {
+                                                            columnName: contentjson.planArr[i][j].name,
+                                                            columnId: contentjson.planArr[i][j].columnId,
+                                                            count: contentjson.planArr[i][j].count,
+                                                            activityType: contentjson.planArr[i][j].activityType,
+                                                            wkType: contentjson.planArr[i][j].wkType,
+                                                            postId: contentjson.planArr[i][j].postId
+                                                    })%>
+                
+                                                </div>
+                                            <% } %>
+                                            <!-- 如果有第二行 -->
+                                            <% if ( contentjson.planArr[i][j].lineTwo != undefined ) { %>
+                                                <% if ( contentjson.planArr[i][j].lineTwo.type == 'none' ) { %>
+                                                    <div class="<%-contentjson.planArr[i][j].lineTwo.line%> edi addMod" DR_drag="1" DR_replace="1"
+                                                        data-name="<%-contentjson.planArr[i][j].lineTwo.name%>"
+                                                        data-type="<%-contentjson.planArr[i][j].lineTwo.type%>"
+                                                        data-line="<%-contentjson.planArr[i][j].lineTwo.line%>"
+                                                        data-columnId="<%-contentjson.planArr[i][j].lineTwo.columnId%>" 
+                                                        data-count="<%-contentjson.planArr[i][j].lineTwo.count%>" 
+                                                        data-activityType="<%-contentjson.planArr[i][j].lineTwo.activityType%>"
+                                                        data-wkType="<%-contentjson.planArr[i][j].lineTwo.wkType%>"
+                                                        data-postId="<%-contentjson.planArr[i][j].lineTwo.postId%>"
+                                                        >
+                    
+                                                        <div class="addModT_sty">
+                                                                <i></i>
+                                                                <p>添加栏目</p>
+                                                        </div>
+    
+                                                        <i class="drag"></i>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="<%-contentjson.planArr[i][j].lineTwo.line%> edi moveMod" DR_drag="1" DR_replace="1" 
+                                                        data-name="<%-contentjson.planArr[i][j].lineTwo.name%>" 
+                                                        data-type="<%-contentjson.planArr[i][j].lineTwo.type%>"
+                                                        data-line="<%-contentjson.planArr[i][j].lineTwo.line%>"
+                                                        data-columnId="<%-contentjson.planArr[i][j].lineTwo.columnId%>" 
+                                                        data-count="<%-contentjson.planArr[i][j].lineTwo.count%>" 
+                                                        data-activityType="<%-contentjson.planArr[i][j].lineTwo.activityType%>"
+                                                        data-wkType="<%-contentjson.planArr[i][j].lineTwo.wkType%>"
+                                                        data-postId="<%-contentjson.planArr[i][j].lineTwo.postId%>"
+                                                        >
+                    
+                                                        <%-include('../template/'+contentjson.planArr[i][j].type, {
+                                                            columnName: contentjson.planArr[i][j].lineTwo.name,
+                                                            columnId: contentjson.planArr[i][j].lineTwo.columnId,
+                                                            count: contentjson.planArr[i][j].lineTwo.count,
+                                                            activityType: contentjson.planArr[i][j].lineTwo.activityType,
+                                                            wkType: contentjson.planArr[i][j].lineTwo.wkType,
+                                                            postId: contentjson.planArr[i][j].lineTwo.postId
+                                                        })%>
+                                                    </div>
+                                                <% } %>
+                                            <% }  %>
+                                 </div>
+            
+                            <% } %>
+                            <!-- 域编辑 -->
+                            <div class="edi_line">
+                                    <div class="layout_set">
+                                        <div class="layout">
+                                            <p class="new_layout">
+                                                <i class="fa fa-plus"></i>新增布局</p>
+                                            <p class="copy_layout">
+                                                <i class="fa fa-files-o"></i>复制布局</p>
+                                        </div>
+                                        <div class="up_down">
+                                            <p class="up">
+                                                <i class="fa fa-arrow-up"></i>
+                                            </p>
+                                            <p class="down">
+                                                <i class="fa fa-arrow-down"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="lay_hei">
+                                        <div class="hei_set">
+                                            <span>高度:</span>
+                                            <label>
+                                                <input type="radio" name="" checked value="默认">
+                                                <i></i>默认</label>
+                                            <label>
+                                                <input type="radio" name="" value="加高">
+                                                <i></i>加高</label>
+                                        </div>
+                                        <div class="lay_but">
+                                            <p class="changeLayout">换布局</p>
+                                            <p class="delMod">删除</p>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>        
+                        
+            </div>
+<% } %>
+<div class="wra_width980 field_wra">
+        <div class="field">
+            <div class="wid980 addLine edi">
+                <span>
+                    <i></i>添加新布局</span>
+            </div>
+        </div>
+    </div>

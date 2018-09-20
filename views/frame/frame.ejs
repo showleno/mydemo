@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<!-- 所有css引入 -->
+    <%-include('../all_style')%>
+    <title>拖拽PC</title>
+</head>
+<body>
+    <div class="content overhide" id="frame_wrap">
+		<div class="decorate_top">
+			<img src="/newpc/images/logo.png" alt="">
+			<ul>
+				<li><a class="saveScheme_but" data-toggle="tab"><i class="fa fa-floppy-o"></i>保存方案</a></li>
+				<li><a class="loadingScheme_but" data-toggle="tab"><i class="fa fa-folder-open"></i>载入方案</a></li>
+				<li><a class="allView"><i class="fa fa-eye"></i>预览</a></li>
+				<li><a class="publish"><i class="fa fa-refresh"></i>发布</a></li>
+			</ul>
+			<p><a href=""><i class="fa fa-external-link"></i>退出</a></p>
+		</div>
+		<div class="main_wrap">
+			<div class="page">
+				<div class="page_nav">
+					<a class="on" data-url="index">首页<i class="fa fa-close"></i></a>
+					<!-- <a>新闻<i class="fa fa-close"></i></a>
+					<a>简介<i class="fa fa-close"></i></a>
+					<a>新闻<i class="fa fa-close"></i></a>
+					<a>会员<i class="fa fa-close"></i></a>
+					<a>活动<i class="fa fa-close"></i></a>
+					<a>圈子<i class="fa fa-close"></i></a>
+					<a>捐赠<i class="fa fa-close"></i></a> -->
+				</div>
+				<div class="loadHtml">
+						<span style="color:#ccc; font-size: 25px; line-height: 700px; text-align: center;  width: 100%; display: inline-block; margin: 0 auto"><i class="fa fa-hand-o-right" style="margin-right: 10px;"></i>请选择右侧边栏页面进行编辑！</span>
+						<!-- LOAD -->
+				</div>
+			</div>
+			<!-- 页面选择面板 -->
+			<div class="fixed_l_r left_page_nav">
+				<div class="pg_t"><i class="fa fa-align-justify"></i>功能区</div>
+				<div class="fun_module">
+					<div class="mod layout_but">
+						<p>布局</p>
+						<span><i class="fa fa-table"></i></span>
+						<em class="fa fa-angle-right"></em>
+					</div>
+					<div class="mod beautify_but" anchor="#beautify">
+						<p>美化</p>
+						<span class="mh_img"><img src="/newpc/images/mh.png"></span>
+						<em class="fa fa-angle-right"></em>
+					</div>
+					<!-- <div class="mod">
+						<p>模块</p>
+						<span><i class="fa fa-tasks"></i></span>
+						<em class="fa fa-angle-right"></em>
+					</div> -->
+					<!-- <div class="mod">
+						<p>插件</p>
+						<span><i class="fa fa-star-half-empty"></i></span>
+						<em class="fa fa-angle-right"></em>
+					</div>
+					<div class="mod">
+						<p>引导</p>
+						<span><i class="fa fa-compass"></i></span>
+						<em class="fa fa-angle-right"></em>
+					</div> -->
+				</div>
+			</div>
+			<div class="left_page_btn">
+				<a><i class="fa fa-angle-double-left"></i></a>
+			</div>
+			<div class="right_page_btn">
+				<a><i class="fa fa-angle-double-right"></i></a>
+			</div>
+			<!-- 功能区面板 -->
+			<div class="fixed_l_r right_page_nav" style="display:none">
+				<div class="pg_t"><i class="fa fa-chevron-up"></i>页面区</div>
+				<div class="pg_n">
+					<a href="#index"><em></em>首页</a>
+					<!-- <a href="#intro"><em></em>简介</a>
+					<a href="#news"><em></em>新闻</a>
+					<a href="#vip"><em></em>会员风采</a> -->
+					<!-- <a href="#activity"><em></em>活动</a>
+					<a href="#qz"><em></em>圈子</a>
+					<a href="#jz"><em></em>捐赠</a>
+					<a href="#wk"><em></em>文库</a>
+					<a href="#question"><em></em>问卷</a>
+					<a href="#helps"><em></em>帮帮忙</a>
+					<a href="#resource"><em></em>资源</a>                                                                                                                                                                  
+					<a href="#magazine"><em></em>期刊</a> -->
+				</div>
+			</div>
+		</div>
+		<!-- 右侧弹出模块 -->
+		<div class="right_alert" id="right_content">
+			<!-- 引入右侧边编辑栏 -->
+			<%-include('../index/right_alert')%>
+		</div>
+		<div class="all_layout">
+			<div class="wra_lay">
+				<!-- 选择布局面板 -->
+				<div class="operation_panel layout" id="layout">
+						<%-include('./all_layout')%>
+				</div>
+				<!-- 美化效果面板 -->
+				<div class="operation_panel beautify" id="beautify" style="padding:0 6px 0 20px;">
+						<%-include('./beautify_panel',{
+							topjson:topjson,
+							bannerjson:bannerjson,
+							footjson:footjson,
+							navjson:navjson,
+							logojson:logojson,
+							contentjson:contentjson,
+							titlejson:titlejson,
+							commonjson:commonjson,
+							slidejson:slidejson,
+							contentjson:contentjson,
+						})%>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<!-- 弹窗 -->
+	<div class="bg-0">
+			<%-include('./save_project',{commonjson: commonjson})%>
+			<%-include('./line_2_style',{commonjson: commonjson})%>
+			<%-include('./change_layout_style',{commonjson: commonjson})%>
+			<%-include('./change_foot_style',{commonjson: commonjson})%>
+			<%-include('../index/nav_edit_settings',{navjson: navjson})%>
+			<%-include('../index/nav_edit_style',{navjson: navjson})%>
+	</div>
+	<div class="bg-2"></div>
+
+	<div class="save_information"><i class="fa fa-check-circle"></i>保存成功</div>
+	
+	<!-- 所有js文件引入 -->
+	<%-include('../all_script')%>
+
+	<script>
+		$(document).ready(function(){
+			common.initJs();
+			beautify.init();
+			save_project.init();
+			right_alert.init();
+			all_layout.init();
+			nav_edit_settings.init();
+			nav_edit_style.init();
+			choose_mod.init();
+		})
+	</script>
+</body>
+</html>

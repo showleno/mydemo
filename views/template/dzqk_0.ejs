@@ -1,0 +1,93 @@
+<!-- 电子期刊 -->
+<div class="list_box _240" >
+    <p class="list_hd">电子期刊</p>
+    <% if ( magazineList.length > 0 ) { %>
+        <ul class="list_ul img_ul_2">
+            <% for ( var i = 0; i< magazineList.length; i++ ) { %>
+                    <li class="list_lst">
+                        <div class="_cont">
+                            <img src="../index.jpg" class="_img_100 mr10"/>
+                            <div class="_rt">
+                                <p class="_dw">江西博德律师事务所</p>
+                                <div class="_btn_box">
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list_lst">
+                        <div class="_cont">
+                            <img src="../index.jpg" class="_img_100 mr10"/>
+                            <div class="_rt">
+                                <p class="_dw">江西博德律师事务所江西博德律师事务所江西博德律师事务所江西博德律师事务所</p>
+                                <div class="_btn_box">
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list_lst">
+                        <div class="_cont">
+                            <img src="../index.jpg" class="_img_100 mr10"/>
+                            <div class="_rt">
+                                <p class="_dw">江西博德律师事务所江西博德律师事务所江西博德律师事务所</p>
+                                <div class="_btn_box">
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list_lst">
+                        <div class="_cont">
+                            <img src="../index.jpg" class="_img_100 mr10"/>
+                            <div class="_rt">
+                                <p class="_name">王楠</p>
+                                <p class="_dw">江西博德律师事务所</p>
+                                <div class="_btn_box">
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">阅读</a>
+                                    <a href="javascript:void(0)" class="_btn btn_primary btn_sml">下载</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <div class="list_ul none_data_wrap">
+                <div class="none_data">
+                    <i class="fa fa-file"></i>
+                    <p>暂无数据</p>
+                </div>
+        </div>
+    <% }  %>
+    </div>
+    <div class="mod_edi_but">
+            <div class="chenga_name">
+                <input type="text" placeholder="标题名称">
+                <a>确定</a>
+                <a>取消</a>
+            </div>
+            <ol>
+                <li>
+                    <a class="on">更名
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <p class="chenga_name_sel">
+                        <span>电子期刊</span>
+                    </p>
+                </li>
+                <li>
+                    <a class="modular_set pub_mask">设置</a>
+                </li>
+                <li>
+                    <a class="chooseStyle">风格</a>
+                </li>
+                <li>
+                    <a href="">加数据</a>
+                </li>
+            </ol>
+        </div>
+        <div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>

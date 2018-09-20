@@ -1,0 +1,93 @@
+<div class="list_box _240">
+    <p class="list_hd"><% if ( typeof columnName !== 'undefined'  ) { %> <%=columnName %> <% } else { %>新闻<% } %></p>
+    <ul class="list_ul news_ul">
+        <!-- <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">社团简介</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">社团简介</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">社团章程</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">社团简介</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+            </span>
+        </li>
+        <li class="list_lst">
+            <span class="_ct">
+                <i class="_dot"></i><a href="javascript" class="_link">入会须知</a>
+            </span>
+        </li> -->
+    </ul>
+</div>
+<div class="mod_edi_but">
+    <div class="chenga_name">
+        <input type="text" placeholder="标题名称">
+        <a>确定</a>
+        <a>取消</a>
+    </div>
+    <ol>
+        <li>
+            <a class="on">更名
+                <i class="fa fa-angle-up"></i>
+            </a>
+            <p class="chenga_name_sel">
+                <span><% if ( typeof columnName !== 'undefined'  ) { %> <%=columnName %> <% } else { %>新闻<% } %></span>
+            </p>
+        </li>
+        <li>
+            <a class="modular_set pub_mask">设置</a>
+        </li>
+        <li>
+            <a class="chooseStyle">风格</a>
+        </li>
+        <li>
+            <a href="">加数据</a>
+        </li>
+    </ol>
+</div>
+<div class="remove"><a class="clearMod">去除</a></div><i class="drag"></i>
+<script>
+            // 在这里请求数据，渲染页面
+            $.ajax({
+                type: 'get',
+                url: 'http://www.daweiyuan.cn//br-isoc/drag/getdata',
+                data: {
+                    isocId: 1,
+                    type: "news",
+                    columnId: 1332,
+                    count: 8
+                }
+            }).success(function (res) {
+                console.log(res)
+                var arr = res.contentList1332;
+                $('.news_ul').html('');
+                for ( var i = 0; i< arr.length; i++ ) {
+                    var tpl = '';
+                    tpl += '<li class="list_lst">';
+                    tpl += '<span class="_ct"><i class="_dot"></i><a href="javascript" class="_link">'+arr[i].title+'</a></span>';
+                    tpl += '</li>';
+                    $('.news_ul').append(tpl);
+                }
+            }).error(function (err) {
+                console.error(err);
+            });
+</script>

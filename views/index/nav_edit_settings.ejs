@@ -1,0 +1,237 @@
+<!-- 顶部导航内容设置 -->
+<div class="alert_set al_1">
+    <div class="alert_tit">顶部导航设置</div>
+    <div class="tab_con">
+        <div class="tab_name nav-tabs">
+            <p class="on"><a>栏目</a></p>
+            <p><a>规格</a></p>
+        </div>
+        <div class="tab_info active" id="top_nav_tab_0">
+            <div>
+                <form action="">
+                    <div class="nav_tit_t">
+                        <p class="wid110 paddLeft_66">主名</p>
+                        <p class="marLeft_20" style="width:114px;">别名</p>
+                        <p class="wid126" style="float:right;">子栏目</p>
+                    </div>
+                    <div id="a4" style="height: 500px; position:relative;">
+                        <div class="nav_con pdd_30" id="b4">
+                            <div class="nav_mod homePage" style="margin-top:0;">
+                                <div class="first_level">
+                                    <div class="ico_nav"><i class="fa fa-lock"></i></div>
+                                    <div class="choice">
+                                        <input type="text" readonly value="首页" style="margin:0;background-color:#eee;">
+                                    </div>
+                                </div>
+                            </div>
+                            <% for(var i = 0; i < navjson.nav_line.length-1; i++) {%>
+                                <div class="nav_mod  navList" id="<%-'navList_'+i%>">
+                                    <div class="first_level">
+                                        <div class="blank"></div>
+                                        <!-- <div class="ico_nav">
+                                            <a class="up_line"><i class="fa fa-arrow-up"></i></a>
+                                            <a class="down_line"><i class="fa fa-arrow-down"></i></a>
+                                        </div> -->
+                                        <div class="choice">
+                                            <div class="select wid110">
+                                                <p><%-navjson.nav_line[i+1].name%><i class="fa fa-caret-down"></i></p>
+                                                <ol>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>-- 请选择 --</dt>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>简介</dt>
+                                                            <dd>简介2</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>新闻</dt>
+                                                            <dd>新闻2</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>会员服务</dt>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>捐赠</dt>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>会员风采</dt>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>圈子</dt>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt>期刊</dt>
+                                                        </dl>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                            <input type="text" placeholder="别名" class="alias_name" value="<%-navjson.nav_line[i+1].alias%>">
+                                                <% if (navjson.nav_line[i+1].show == true) 
+                                                    { %> 
+                                                        <a class="bg_283c50 showHide">
+                                                            <input type="checkbox" class="checked_0 checked">
+                                                            <span><em>隐藏</em></span>
+                                                        </a>
+                                                    <% }
+                                                    else {%>
+                                                        <a class="bg_999 showHide">
+                                                                <input type="checkbox" class="checked_0">
+                                                                <span><em>显示</em></span>
+                                                            </a>
+                                                    <%}
+                                                 %> 
+                                            <a class="bg_283c50 del_first">删除</a>
+                                        </div>
+                                        <div class="show_hide">
+                                            <em>(<%-navjson.nav_line[i+1].childNav.length%>)</em>
+                                            <a><i class="fa fa-plus-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="sec_all">
+                                        <% if ( navjson.nav_line[i+1].childNav.length > 0 ) { %>
+                                            <% for(var a = 0; a < navjson.nav_line[i+1].childNav.length; a++) {%>
+                                            <div class="sec_level twomenu">
+                                                <div class="choice">
+                                                    <div class="select wid110">
+                                                        <p><%-navjson.nav_line[i+1].childNav[a].name%><i class="fa fa-caret-down"></i></p>
+                                                        <ol>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt>中国·上海·浦东新区总部·人力资源</dt>
+                                                                    <dd>小花</dd>
+                                                                    <dd>小梅</dd>
+                                                                </dl>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt>研发部</dt>
+                                                                    <dd>小明</dd>
+                                                                    <dd>发仔</dd>
+                                                                </dl>
+                                                            </li>
+                                                        </ol>
+                                                    </div>
+                                                    <input type="text" placeholder="别名" class="alias_name_2" value="<%-navjson.nav_line[i+1].childNav[a].alias%>">
+                                                    <a class="bg_283c50 del_line">删除</a>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                        <% } %>
+                                        <div class="sec_level state-disabled">
+                                            <div class="choice">
+                                                <div class="select wid110">
+                                                    <p>-- 请选择 --<i class="fa fa-caret-down"></i></p>
+                                                    <ol>
+                                                        <li>
+                                                            <dl>
+                                                                <dt>中国·上海·浦东新区总部·人力资源</dt>
+                                                                <dd>小花</dd>
+                                                                <dd>小梅</dd>
+                                                            </dl>
+                                                        </li>
+                                                        <li>
+                                                            <dl>
+                                                                <dt>研发部</dt>
+                                                                <dd>小明</dd>
+                                                                <dd>发仔</dd>
+                                                            </dl>
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                                <input type="text" placeholder="别名" class="alias_name_2">
+                                                <a class="bg_bj_b addTo">添加</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+
+                                
+                            </div>
+                            <!-- <div class="scrollbar" id="d4">
+                                <div class="scrollbtn" id="c4"></div>
+                            </div> -->
+                        </div>
+                        <div class="add_column"><a>添加栏目</a></div>
+                        <div class="post_but"><a class="bg_bj_b column_but">确定</a><a class="bg_999 post_cancel">取消</a></div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab_info" id="top_nav_tab_1">
+                <form action="">
+                    <div class="top_set_wra">
+                        <div class="top_set_line">
+                            <div class="top_set_l">规格：</div>
+                            <div class="top_set_r">
+                                <% if (navjson.speDet.width[0] == "980px") 
+                                    { %> 
+                                        <label>
+                                            <input class="fullWidthSize" type="radio" name="width" value="fullWidth" checked>
+                                            <p>普通</p>
+                                        </label>
+                                        <label>
+                                            <input class="980WidthSize" type="radio" name="width" value="980Width">
+                                            <p>全屏</p>
+                                        </label>
+                                    <% }
+                                    else {%>
+                                        <label>
+                                            <input type="radio" name="width">
+                                            <p>普通</p>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="width" checked>
+                                            <p>全屏</p>
+                                        </label>
+                                    <%}
+                                 %> 
+                        </div>
+                    </div>
+                    <div class="top_set_line">
+                        <div class="top_set_l">高度：</div>
+                        <div class="top_set_r">
+                            <div class="input_px">
+                                <input type="text" class="navHeight" placeholder="输入高度" value="<%-navjson.speDet.height%>" onKeyUp="value=value.replace(/[^\d]/g,'')">
+                                <span>像素/PX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_set_line">
+                        <div class="top_set_l">上间距：</div>
+                        <div class="top_set_r">
+                            <div class="input_px">
+                                <input type="text" class="navMarTop" placeholder="输入上间距" value="<%-navjson.speDet.marTop %>" onKeyUp="value=value.replace(/[^\d]/g,'')">
+                                <span>像素/PX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_set_line">
+                        <div class="top_set_l">下间距：</div>
+                        <div class="top_set_r">
+                            <div class="input_px">
+                                <input type="text" class="navMarBot" placeholder="输入下间距" value="<%-navjson.speDet.marBot %>" onKeyUp="value=value.replace(/[^\d]/g,'')">
+                                <span>像素/PX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post_but"><a class="bg_bj_b column_but">确定</a><a class="bg_999 post_cancel">取消</a></div>
+            </form>
+        </div>
+    </div>
+</div>
