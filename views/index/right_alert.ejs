@@ -743,24 +743,17 @@
                                 <p>下间距(PX) ：</p>
                                 <input type="text" class="marLeft10 modify_marBot" value="<%-slidejson.marBottom%>" onkeyup="value=value.replace(/[^\d]/g,'')";>
                             </div>
-                            <form class="layui-form layui-form-pane" action="">
-                                <div class="logo_modify_input">
-                                    <p class="left" style="color: #fff">模块显示：</p>
-                                    <div class="layui-input-block left marLeft10">
-                                        <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="是|否">
-                                        <input type="hidden" value="<%-slidejson.doesShow[1]%>" class="doesShow">
-                                    </div>
-                                    <!-- <p>模块显示：</p>
-                                    <div class="select_down changeDisplay floatLeft marLeft10">
-                                        <p class="wid48"><%-slidejson.doesShow[1]%><i class="fa fa-caret-down"></i></p>
-                                        <ol>
-                                            <li>是</li>
-                                            <li>否</li>
-                                        </ol>
-                                        <input type="hidden" value="<%-slidejson.doesShow[1]%>" class="doesShow">
-                                    </div> -->
+                            <div class="logo_modify_input">
+                                <p>模块显示：</p>
+                                <div class="select_down changeDisplay floatLeft marLeft10">
+                                    <p class="wid48"><%-slidejson.doesShow[1]%><i class="fa fa-caret-down"></i></p>
+                                    <ol>
+                                        <li>是</li>
+                                        <li>否</li>
+                                    </ol>
+                                    <input type="hidden" value="<%-slidejson.doesShow[1]%>" class="doesShow">
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

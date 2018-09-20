@@ -31,7 +31,7 @@ var right_alert = {
             me.dropDown(e);
         })
         .on('click', '.right_number_6 .changeDisplay ol li', function(e){
-            // me.bannerDisplay(e);
+            me.bannerDisplay(e);
         })
         .on('click', '.right_number_1 .select_down ol li', function(e){
             me.webNameDisplay(e);
@@ -47,15 +47,7 @@ var right_alert = {
         // 分支--选择模块
         chooseMod.init();
     },
-    layui: function(){
-        var form = layui.form
-                 ,layer = layui.layer
-
-        this.bannerDisplay(form);
-        
-    },
     initJs: function() {
-        this.layui();
         this.colorPick();
         //   导航栏目宽度计算
         var top_nav_length = $(".page_nav").children("a").length;
@@ -135,25 +127,21 @@ var right_alert = {
      },
 
     // banner 模块显示隐藏
-    bannerDisplay: function(form) {
-        //监听显示轮播图开关
-        form.on('switch(switchTest)', function(data){
-            var addSlide = '<div class="wra_width980 field_wra"><div class="field"><div class="wid980 addSlide edi pub_mask"><span><i></i>添加轮播图</span></div></div></div>';
-            var showSet = '<div class="wra_width980 edi lbtbj showBut"><div class="but"><a class="slide_set pub_mask">设置效果</a></div></div>';
-            var text = '';
-            if (  this.checked ) {
-                text = '是';
-                $('.L_1').show();
-                $('.slideShow').find('.wra_width980').remove();
-                $('.slideShow').append(showSet);
-            }else {
-                text = '否';
-                $('.L_1').hide();
-                $('.slideShow').find('.wra_width980').remove();
-                $('.slideShow').append(addSlide);
-            }
-            $('.right_number_6').find('.doesShow').val(text);
-        });
+    bannerDisplay: function(e) {
+        var target = e.srcElement ? e.srcElement : e.target;
+        var val = $(target).parent().siblings('.doesShow').val();
+        var addSlide = '<div class="wra_width980 field_wra"><div class="field"><div class="wid980 addSlide edi pub_mask"><span><i></i>添加轮播图</span></div></div></div>';
+        var showSet = '<div class="wra_width980 edi lbtbj showBut"><div class="but"><a class="slide_set pub_mask">设置效果</a></div></div>';
+
+        if ( $(target).parent().siblings('.doesShow').val() == '是' ) {
+            $('.L_1').show();
+            $('.slideShow').find('.wra_width980').remove();
+            $('.slideShow').append(showSet);
+        }else if ( $(target).parent().siblings('.doesShow').val() == '否' ) {
+            $('.L_1').hide();
+            $('.slideShow').find('.wra_width980').remove();
+            $('.slideShow').append(addSlide);
+        }
     },
 
     // 网站名称显示隐藏
